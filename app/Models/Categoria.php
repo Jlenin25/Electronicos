@@ -28,8 +28,6 @@ class Categoria extends Model
      * @var array
      */
     protected $fillable = ['nombre'];
-
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
