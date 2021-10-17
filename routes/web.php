@@ -22,4 +22,5 @@ Route::resource('operaciones', App\Http\Controllers\OperacionesController::class
 Route::resource('logistica', App\Http\Controllers\LogisticaController::class);
 Route::resource('dashboard', App\Http\Controllers\DashboardController::class);
 Route::resource('roles', App\Http\Controllers\RoleController::class)->names('roles');
+Route::resource('clientes', App\Http\Controllers\ClienteController::class);
 Auth::routes();

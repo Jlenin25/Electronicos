@@ -2,22 +2,43 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cliente extends Model {
-    use HasFactory;
-
+/**
+ * Class Cliente
+ *
+ * @property $id
+ * @property $id_user
+ * @property $created_at
+ * @property $updated_at
+ *
+ * @property User $user
+ * @package App
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
+class Cliente extends Model
+{
+    
     static $rules = [
-		'id_proveedor' => 'required'
     ];
 
-    protected $fillable = [
-        'id_proveedor'
-    ];
+    protected $perPage = 20;
 
-    public function cotizacion()
+    /**
+     * Attributes that should be mass-assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['id_user'];
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function user()
     {
-        return $this->hasMany('App\Models\User', 'id_user', 'id');
+        return $this->hasOne('App\Models\User', 'id', 'id_user');
     }
+    
+
 }
