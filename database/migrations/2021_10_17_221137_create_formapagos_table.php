@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCondiciongeneralTable extends Migration
+class CreateFormapagosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateCondiciongeneralTable extends Migration
      */
     public function up()
     {
-        Schema::create('condiciongeneral', function (Blueprint $table) {
+        Schema::create('formapagos', function (Blueprint $table) {
             $table->id();
+            $table->string('efectivo');
+            $table->string('credito');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateCondiciongeneralTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('condiciongeneral');
+        Schema::dropIfExists('formapagos');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEstadoTable extends Migration
+class CreateExpirasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateEstadoTable extends Migration
      */
     public function up()
     {
-        Schema::create('estado', function (Blueprint $table) {
+        Schema::create('expiras', function (Blueprint $table) {
             $table->id();
+            $table->string('dias');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateEstadoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estado');
+        Schema::dropIfExists('expiras');
     }
 }

@@ -23,4 +23,12 @@ Route::resource('logistica', App\Http\Controllers\LogisticaController::class);
 Route::resource('dashboard', App\Http\Controllers\DashboardController::class);
 Route::resource('roles', App\Http\Controllers\RoleController::class)->names('roles');
 Route::resource('clientes', App\Http\Controllers\ClienteController::class);
+// CRUD
+Route::resource('estados', App\Http\Controllers\EstadoController::class);
+Route::resource('expiras', App\Http\Controllers\ExpiraController::class);
+Route::resource('formadepagos', App\Http\Controllers\FormapagoController::class);
+Route::resource('monedas', App\Http\Controllers\MonedaController::class);
+Route::resource('tiempodeentregas', App\Http\Controllers\TiempoentregaController::class);
+
+
 Auth::routes();

@@ -296,11 +296,11 @@ return [
                         ],
                         [
                             'text' => 'Moneda',
-                            'url'  => '#',
+                            'url'  => 'monedas',
                         ],
                         [
                             'text' => 'Expira',
-                            'url'  => '#',
+                            'url'  => 'expiras',
                         ],
                         [
                             'text' => 'Condiciones Generales',
@@ -308,15 +308,15 @@ return [
                         ],
                         [
                             'text' => 'Estado',
-                            'url'  => '#',
+                            'url'  => 'estados',
                         ],
                         [
                             'text' => 'Forma de pago',
-                            'url'  => '#',
+                            'url'  => 'formadepagos',
                         ],
                         [
                             'text' => 'Tiempo de entrega',
-                            'url'  => '#',
+                            'url'  => 'tiempodeentregas',
                         ],
                         [
                             'text' => 'Dirección',
