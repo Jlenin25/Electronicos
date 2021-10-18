@@ -28,7 +28,10 @@ Route::resource('estados', App\Http\Controllers\EstadoController::class);
 Route::resource('expiras', App\Http\Controllers\ExpiraController::class);
 Route::resource('formadepagos', App\Http\Controllers\FormapagoController::class);
 Route::resource('monedas', App\Http\Controllers\MonedaController::class);
-Route::resource('tiempodeentregas', App\Http\Controllers\TiempoentregaController::class);
-
-
+Route::resource('tiempoentregas', App\Http\Controllers\TiempoentregaController::class);
+Route::resource('asignado', App\Http\Controllers\AsignadoController::class);
+Route::resource('direccion', App\Http\Controllers\DireccionController::class);
+Route::resource('piepaginas', App\Http\Controllers\PiepaginaController::class);
+Route::resource('condicionesgenerales', App\Http\Controllers\CondicionesGeneralesController::class);
+Route::resource('cotis', App\Http\Controllers\CotiController::class);
 Auth::routes();

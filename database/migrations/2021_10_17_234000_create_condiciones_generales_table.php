@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMonedasTable extends Migration
+class CreateCondicionesGeneralesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateMonedasTable extends Migration
      */
     public function up()
     {
-        Schema::create('monedas', function (Blueprint $table) {
+        Schema::create('condiciones_generales', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo_monedas');
+            $table->string('cod_condicionesgenerales');
+            $table->string('name_condicionesgenerales');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateMonedasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('monedas');
+        Schema::dropIfExists('condiciones_generales');
     }
 }

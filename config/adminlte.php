@@ -85,7 +85,7 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
+    'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
@@ -288,51 +288,60 @@ return [
             'submenu' => [
                 [
                     'text' => 'Cotización',
-                    'url'  => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Asignado',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text' => 'Moneda',
-                            'url'  => 'monedas',
-                        ],
-                        [
-                            'text' => 'Expira',
-                            'url'  => 'expiras',
-                        ],
-                        [
-                            'text' => 'Condiciones Generales',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text' => 'Estado',
-                            'url'  => 'estados',
-                        ],
-                        [
-                            'text' => 'Forma de pago',
-                            'url'  => 'formadepagos',
-                        ],
-                        [
-                            'text' => 'Tiempo de entrega',
-                            'url'  => 'tiempodeentregas',
-                        ],
-                        [
-                            'text' => 'Dirección',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text' => 'Pie de página',
-                            'url'  => '#',
-                        ],
-                    ],
+                    'url'  => 'cotis',
+                    'can' => 'cotis.index',
                 ],
                 [
                     'text' => 'Clientes',
-                    'url'  => '#',
+                    'url'  => 'clientes',
+                    'can' => 'clientes.index',
                 ],
             ],
+        ],
+        [
+            'text'        => 'Asignado',
+            'url'         => 'productos',
+            'can'         => 'productos.index',
+        ],
+        [
+            'text'        => 'Moneda',
+            'url'         => 'monedas',
+            'can'         => 'monedas.index',
+        ],
+        [
+            'text'        => 'Expira',
+            'url'         => 'expiras',
+            'can'         => 'expiras.index',
+        ],
+        [
+            'text'        => 'Condiciones Generales',
+            'url'         => 'productos',
+            'can'         => 'productos.index',
+        ],
+        [
+            'text'        => 'Estado',
+            'url'         => 'estados',
+            'can'         => 'estados.index',
+        ],
+        [
+            'text'        => 'Forma de pago',
+            'url'         => 'formadepagos',
+            'can'         => 'formadepagos.index',
+        ],
+        [
+            'text'        => 'Tiempo de entrega',
+            'url'         => 'tiempodeentregas',
+            'can'         => 'tiempodeentregas.index',
+        ],
+        [
+            'text'        => 'Dirección',
+            'url'         => 'productos',
+            'can'         => 'productos.index',
+        ],
+        [
+            'text'        => 'Pie de página',
+            'url'         => 'productos',
+            'can'         => 'productos.index',
         ],
         [
             'text'        => 'INCIDENCIAS',
