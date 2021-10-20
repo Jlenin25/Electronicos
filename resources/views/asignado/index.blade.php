@@ -21,11 +21,9 @@
                 <form action="{{route ('asignado.destroy',$asignado->id)}}" method="POST">
                     
                     <a href="/asignado/{{ $asignado->id }}/edit" class="btn btn-info">Editar</a>
-                    
 
                     @csrf
                     @method('DELETE')
-
                    
                     <button type="submit" class="btn btn-danger">borrar</button>
                     
