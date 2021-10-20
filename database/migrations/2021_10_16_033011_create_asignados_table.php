@@ -15,7 +15,6 @@ class CreateAsignadosTable extends Migration
     {
         Schema::create('asignados', function (Blueprint $table) {
             $table->id();
-            $table->string('cod_asignado');
             $table->string('name_asignado');
             $table->timestamps();
         });

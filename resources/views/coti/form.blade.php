@@ -8,7 +8,13 @@
         </div>
         <div class="form-group">
             {{ Form::label('id_asignado') }}
-            {{ Form::text('id_asignado', $coti->id_asignado, ['class' => 'form-control' . ($errors->has('id_asignado') ? ' is-invalid' : ''), 'placeholder' => 'Id Asignado']) }}
+            {{ Form::select('id_asignado', $coti, null, ['class' => 'form-control' . ($errors->has('id_asignado') ? ' is-invalid' : ''), 'placeholder' => 'Id Asignado']) }}
+            {{-- <select name="id_cliente" id="">
+                @foreach ($coti as $cot)
+                <option value="{{ $coti->id_asignado }}">{{ $coti->name_asignado }}</option>
+                @endforeach
+            </select> --}}
+            {{-- {{ Form::text('id_asignado', $coti->id_asignado, ['class' => 'form-control' . ($errors->has('id_asignado') ? ' is-invalid' : ''), 'placeholder' => 'Id Asignado']) }} --}}
             {!! $errors->first('id_asignado', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">

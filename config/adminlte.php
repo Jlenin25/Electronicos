@@ -300,8 +300,8 @@ return [
         ],
         [
             'text'        => 'Asignado',
-            'url'         => 'productos',
-            'can'         => 'productos.index',
+            'url'         => 'asignado',
+            'can'         => 'asignado.index',
         ],
         [
             'text'        => 'Moneda',
@@ -315,8 +315,8 @@ return [
         ],
         [
             'text'        => 'Condiciones Generales',
-            'url'         => 'productos',
-            'can'         => 'productos.index',
+            'url'         => 'condicionesgenerales',
+            'can'         => 'condicionesgenerales.index',
         ],
         [
             'text'        => 'Estado',
@@ -335,13 +335,13 @@ return [
         ],
         [
             'text'        => 'Dirección',
-            'url'         => 'productos',
-            'can'         => 'productos.index',
+            'url'         => 'direccion',
+            'can'         => 'direccion.index',
         ],
         [
             'text'        => 'Pie de página',
-            'url'         => 'productos',
-            'can'         => 'productos.index',
+            'url'         => 'piepaginas',
+            'can'         => 'piepagina.index',
         ],
         [
             'text'        => 'INCIDENCIAS',

@@ -15,8 +15,7 @@ class CreateCondicionesGeneralesTable extends Migration
     {
         Schema::create('condiciones_generales', function (Blueprint $table) {
             $table->id();
-            $table->string('cod_condicionesgenerales');
-            $table->string('name_condicionesgenerales');
+            $table->string('condicionesgenerales');
             $table->timestamps();
         });
     }

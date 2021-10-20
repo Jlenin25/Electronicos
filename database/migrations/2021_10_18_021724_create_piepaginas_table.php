@@ -15,8 +15,7 @@ class CreatePiepaginasTable extends Migration
     {
         Schema::create('piepaginas', function (Blueprint $table) {
             $table->id();
-            $table->string('cod_piedepagina');
-            $table->string('name_piedepagina');
+            $table->string('piedepagina');
             $table->timestamps();
         });
     }
