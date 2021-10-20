@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('layouts.template-crud')
 @section('template_title')
     Piepagina
 @endsection
@@ -35,9 +34,8 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Cod Piedepagina</th>
-										<th>Name Piedepagina</th>
+
+										<th>Piedepagina</th>
 
                                         <th></th>
                                     </tr>
@@ -46,9 +44,8 @@
                                     @foreach ($piepaginas as $piepagina)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $piepagina->cod_piedepagina }}</td>
-											<td>{{ $piepagina->name_piedepagina }}</td>
+
+											<td>{{ $piepagina->piedepagina }}</td>
 
                                             <td>
                                                 <form action="{{ route('piepaginas.destroy',$piepagina->id) }}" method="POST">

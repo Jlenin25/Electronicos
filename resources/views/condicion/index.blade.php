@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.template-crud')
 
 @section('template_title')
-    Direccion
+    Condicion
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Direccion') }}
+                                {{ __('Condicion') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('direccions.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('condicions.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -35,23 +35,23 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Direccion</th>
+
+										<th>Condicionesgenerales</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($direccions as $direccion)
+                                    @foreach ($condicions as $condicion)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $direccion->direccion }}</td>
+
+											<td>{{ $condicion->condicionesgenerales }}</td>
 
                                             <td>
-                                                <form action="{{ route('direccions.destroy',$direccion->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('direccions.show',$direccion->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('direccions.edit',$direccion->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('condicions.destroy',$condicion->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('condicions.show',$condicion->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('condicions.edit',$condicion->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $direccions->links() !!}
+                {!! $condicions->links() !!}
             </div>
         </div>
     </div>

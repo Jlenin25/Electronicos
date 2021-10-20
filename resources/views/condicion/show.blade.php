@@ -1,7 +1,7 @@
 @extends('layouts.template-crud')
 
 @section('template_title')
-    {{ $estado->name ?? 'Show Estado' }}
+    {{ $condicion->name ?? 'Show Condicion' }}
 @endsection
 
 @section('content')
@@ -11,18 +11,18 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Estado</span>
+                            <span class="card-title">Show Condicion</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('estados.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('condicions.index') }}"> Back</a>
                         </div>
                     </div>
 
                     <div class="card-body">
 
                         <div class="form-group">
-                            <strong>Estado:</strong>
-                            {{ $estado->estado }}
+                            <strong>Condicionesgenerales:</strong>
+                            {{ $condicion->condicionesgenerales }}
                         </div>
 
                     </div>

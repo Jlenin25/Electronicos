@@ -300,7 +300,7 @@ return [
         ],
         [
             'text'        => 'Asignado',
-            'url'         => 'asignado',
+            'url'         => 'asignados',
             'can'         => 'asignado.index',
         ],
         [
@@ -315,8 +315,8 @@ return [
         ],
         [
             'text'        => 'Condiciones Generales',
-            'url'         => 'condicionesgenerales',
-            'can'         => 'condicionesgenerales.index',
+            'url'         => 'condicions',
+            'can'         => 'condicions.index',
         ],
         [
             'text'        => 'Estado',
@@ -325,7 +325,7 @@ return [
         ],
         [
             'text'        => 'Forma de pago',
-            'url'         => 'formadepagos',
+            'url'         => 'formapagos',
             'can'         => 'formadepagos.index',
         ],
         [

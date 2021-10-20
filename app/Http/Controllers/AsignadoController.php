@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Asignado;
+use Illuminate\Http\Request;
+
+/**
+ * Class AsignadoController
+ * @package App\Http\Controllers
+ */
 class AsignadoController extends Controller
 {
     /**
@@ -13,8 +18,10 @@ class AsignadoController extends Controller
      */
     public function index()
     {
-        $asignados =Asignado::all();
-        return view('asignado.index')->with('asignados',$asignados);
+        $asignados = Asignado::paginate();
+
+        return view('asignado.index', compact('asignados'))
+            ->with('i', (request()->input('page', 1) - 1) * $asignados->perPage());
     }
 
     /**
@@ -24,78 +31,79 @@ class AsignadoController extends Controller
      */
     public function create()
     {
-        return view('asignado.create');
+        $asignado = new Asignado();
+        return view('asignado.create', compact('asignado'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $asignados = new Asignado();
-        $asignados->cod_asignado = $request->get('cod_asignado');
-        $asignados->name_asignado = $request->get('name_asignado');
+        request()->validate(Asignado::$rules);
 
-        $asignados->save();
+        $asignado = Asignado::create($request->all());
 
-        return redirect('/asignado');
+        return redirect()->route('asignados.index')
+            ->with('success', 'Asignado created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $asignado = Asignado::find($id);
+
+        return view('asignado.show', compact('asignado'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $asignado =Asignado::find($id);
-        return view('asignado.edit')->with('asignado',$asignado);
+        $asignado = Asignado::find($id);
+
+        return view('asignado.edit', compact('asignado'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  Asignado $asignado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Asignado $asignado)
     {
-        $asignado =Asignado::find($id);
-        $asignado->cod_asignado = $request->get('cod_asignado');
-        $asignado->name_asignado = $request->get('name_asignado');
-        
+        request()->validate(Asignado::$rules);
 
-        $asignado->save();
+        $asignado->update($request->all());
 
-        return redirect('/asignado');
+        return redirect()->route('asignados.index')
+            ->with('success', 'Asignado updated successfully');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      */
     public function destroy($id)
     {
-        $asignado =Asignado::find($id);
-        $asignado->delete();
-        return redirect('/asignado');
+        $asignado = Asignado::find($id)->delete();
+
+        return redirect()->route('asignados.index')
+            ->with('success', 'Asignado deleted successfully');
     }
 }

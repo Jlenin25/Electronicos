@@ -1,7 +1,7 @@
 @extends('layouts.template-crud')
 
 @section('template_title')
-    Update Asignado
+    Update Condicion
 @endsection
 
 @section('content')
@@ -13,14 +13,14 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Asignado</span>
+                        <span class="card-title">Update Condicion</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('asignados.update', $asignado->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('condicions.update', $condicion->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('asignado.form')
+                            @include('condicion.form')
 
                         </form>
                     </div>

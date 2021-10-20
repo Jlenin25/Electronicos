@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $created_at
  * @property $updated_at
  *
+ * @property Coti[] $cotis
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -32,5 +33,13 @@ class Estado extends Model
     protected $fillable = ['estado'];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function cotis()
+    {
+        return $this->hasMany('App\Models\Coti', 'id_estado', 'id');
+    }
+    
 
 }

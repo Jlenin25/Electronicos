@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template-crud')
 
 @section('template_title')
     Coti
@@ -35,17 +35,17 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Id Cliente</th>
-										<th>Id Asignado</th>
-										<th>Id Expira</th>
-										<th>Id Moneda</th>
-										<th>Id Tiempoentrega</th>
-										<th>Id Formapago</th>
-										<th>Id Estado</th>
-										<th>Id Direccion</th>
-										<th>Id Condiciones Generale</th>
-										<th>Id Piepagina</th>
+
+										<th>Cliente</th>
+										<th>Asignado</th>
+										<th>Expira</th>
+										<th>Moneda</th>
+										<th>Tiempoentrega</th>
+										<th>Formapago</th>
+										<th>Estado</th>
+										<th>Direccion</th>
+										<th>Condiciones Generale</th>
+										<th>Piepagina</th>
 
                                         <th></th>
                                     </tr>
@@ -54,7 +54,7 @@
                                     @foreach ($cotis as $coti)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 											<td>{{ $coti->id_cliente }}</td>
 											<td>{{ $coti->id_asignado }}</td>
 											<td>{{ $coti->id_expira }}</td>

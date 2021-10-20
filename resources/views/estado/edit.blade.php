@@ -1,4 +1,5 @@
 @extends('layouts.template-crud')
+
 @section('template_title')
     Update Estado
 @endsection

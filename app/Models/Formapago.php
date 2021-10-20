@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $created_at
  * @property $updated_at
  *
+ * @property Coti[] $cotis
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -34,5 +35,13 @@ class Formapago extends Model
     protected $fillable = ['efectivo','credito'];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function cotis()
+    {
+        return $this->hasMany('App\Models\Coti', 'id_formapago', 'id');
+    }
+    
 
 }
