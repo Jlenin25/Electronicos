@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Piepagina
+ * Class Condicion
  *
  * @property $id
- * @property $piedepagina
+ * @property $condicionesgenerales
  * @property $created_at
  * @property $updated_at
  *
@@ -16,11 +16,11 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Piepagina extends Model
+class Condicion extends Model
 {
     
     static $rules = [
-		'piedepagina' => 'required',
+		'condicionesgenerales' => 'required',
     ];
 
     protected $perPage = 20;
@@ -30,7 +30,7 @@ class Piepagina extends Model
      *
      * @var array
      */
-    protected $fillable = ['piedepagina'];
+    protected $fillable = ['condicionesgenerales'];
 
 
     /**
@@ -38,7 +38,7 @@ class Piepagina extends Model
      */
     public function cotis()
     {
-        return $this->hasMany('App\Models\Coti', 'id_piepagina', 'id');
+        return $this->hasMany('App\Models\Coti', 'id_condicions', 'id');
     }
     
 

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Direccion;
+use App\Models\Condicion;
 use Illuminate\Http\Request;
 
 /**
- * Class DireccionController
+ * Class CondicionController
  * @package App\Http\Controllers
  */
-class DireccionController extends Controller
+class CondicionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +18,10 @@ class DireccionController extends Controller
      */
     public function index()
     {
-        $direccions = Direccion::paginate();
+        $condicions = Condicion::paginate();
 
-        return view('direccion.index', compact('direccions'))
-            ->with('i', (request()->input('page', 1) - 1) * $direccions->perPage());
+        return view('condicion.index', compact('condicions'))
+            ->with('i', (request()->input('page', 1) - 1) * $condicions->perPage());
     }
 
     /**
@@ -31,8 +31,8 @@ class DireccionController extends Controller
      */
     public function create()
     {
-        $direccion = new Direccion();
-        return view('direccion.create', compact('direccion'));
+        $condicion = new Condicion();
+        return view('condicion.create', compact('condicion'));
     }
 
     /**
@@ -43,12 +43,12 @@ class DireccionController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Direccion::$rules);
+        request()->validate(Condicion::$rules);
 
-        $direccion = Direccion::create($request->all());
+        $condicion = Condicion::create($request->all());
 
-        return redirect()->route('direccions.index')
-            ->with('success', 'Direccion created successfully.');
+        return redirect()->route('condicions.index')
+            ->with('success', 'Condicion created successfully.');
     }
 
     /**
@@ -59,9 +59,9 @@ class DireccionController extends Controller
      */
     public function show($id)
     {
-        $direccion = Direccion::find($id);
+        $condicion = Condicion::find($id);
 
-        return view('direccion.show', compact('direccion'));
+        return view('condicion.show', compact('condicion'));
     }
 
     /**
@@ -72,26 +72,26 @@ class DireccionController extends Controller
      */
     public function edit($id)
     {
-        $direccion = Direccion::find($id);
+        $condicion = Condicion::find($id);
 
-        return view('direccion.edit', compact('direccion'));
+        return view('condicion.edit', compact('condicion'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  Direccion $direccion
+     * @param  Condicion $condicion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Direccion $direccion)
+    public function update(Request $request, Condicion $condicion)
     {
-        request()->validate(Direccion::$rules);
+        request()->validate(Condicion::$rules);
 
-        $direccion->update($request->all());
+        $condicion->update($request->all());
 
-        return redirect()->route('direccions.index')
-            ->with('success', 'Direccion updated successfully');
+        return redirect()->route('condicions.index')
+            ->with('success', 'Condicion updated successfully');
     }
 
     /**
@@ -101,9 +101,9 @@ class DireccionController extends Controller
      */
     public function destroy($id)
     {
-        $direccion = Direccion::find($id)->delete();
+        $condicion = Condicion::find($id)->delete();
 
-        return redirect()->route('direccions.index')
-            ->with('success', 'Direccion deleted successfully');
+        return redirect()->route('condicions.index')
+            ->with('success', 'Condicion deleted successfully');
     }
 }

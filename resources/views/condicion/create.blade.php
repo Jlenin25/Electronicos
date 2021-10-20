@@ -1,7 +1,7 @@
 @extends('layouts.template-crud')
 
 @section('template_title')
-    Create Cliente
+    Create Condicion
 @endsection
 
 @section('content')
@@ -13,13 +13,13 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Cliente</span>
+                        <span class="card-title">Create Condicion</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('clientes.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('condicions.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('cliente.form')
+                            @include('condicion.form')
 
                         </form>
                     </div>

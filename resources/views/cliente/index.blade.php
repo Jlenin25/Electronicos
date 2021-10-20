@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template-crud')
 
 @section('template_title')
     Cliente
@@ -35,7 +35,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
+
 										<th>Id User</th>
 
                                         <th></th>
@@ -45,7 +45,7 @@
                                     @foreach ($clientes as $cliente)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 											<td>{{ $cliente->id_user }}</td>
 
                                             <td>

@@ -55,14 +55,14 @@ class CreateCotisTable extends Migration
                   ->constrained('direccions')
                   ->cascadeOnUpdate()
                   ->nullOnDelete();
-            $table->foreignId('id_condiciones_generale')
-                  ->nullable()
-                  ->constrained('condiciones_generales')
-                  ->cascadeOnUpdate()
-                  ->nullOnDelete();
             $table->foreignId('id_piepagina')
                   ->nullable()
                   ->constrained('piepaginas')
+                  ->cascadeOnUpdate()
+                  ->nullOnDelete();
+            $table->foreignId('id_condicions')
+                  ->nullable()
+                  ->constrained('condicions')
                   ->cascadeOnUpdate()
                   ->nullOnDelete();
             $table->timestamps();
