@@ -43,14 +43,9 @@
             {!! $errors->first('id_estado', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('direccion') }}
-            {{ Form::text('id_direccion', $coti->id_direccion, ['class' => 'form-control' . ($errors->has('id_direccion') ? ' is-invalid' : ''), 'placeholder' => 'Id Direccion']) }}
-            {!! $errors->first('id_direccion', '<div class="invalid-feedback">:message</p>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('condiciones generales') }}
-            {{ Form::text('id_condiciones_generale', $coti->id_condiciones_generale, ['class' => 'form-control' . ($errors->has('id_condiciones_generale') ? ' is-invalid' : ''), 'placeholder' => 'Id Condiciones Generale']) }}
-            {!! $errors->first('id_condiciones_generale', '<div class="invalid-feedback">:message</p>') !!}
+            {{ Form::text('id_condicions', $coti->id_condicions, ['class' => 'form-control' . ($errors->has('id_condicions') ? ' is-invalid' : ''), 'placeholder' => 'Id Condiciones Generales']) }}
+            {!! $errors->first('id_condicions', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('pie de pagina') }}

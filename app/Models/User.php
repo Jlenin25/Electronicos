@@ -15,6 +15,7 @@ class User extends Authenticatable {
         'name' => 'required',
         'lastname' => 'required',
         'docu' => 'required',
+        'direccion' => 'required',
         'estado' => 'required',
         'email' => 'required',
         'password' => 'required'
@@ -28,6 +29,7 @@ class User extends Authenticatable {
         'name',
         'lastname',
         'docu',
+        'direccion',
         'estado',
         'email',
         'password',

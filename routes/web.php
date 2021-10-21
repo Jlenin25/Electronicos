@@ -29,7 +29,7 @@ Route::resource('estados', App\Http\Controllers\EstadoController::class);
 Route::resource('expiras', App\Http\Controllers\ExpiraController::class);
 Route::resource('monedas', App\Http\Controllers\MonedaController::class);
 Route::resource('tiempoentregas', App\Http\Controllers\TiempoentregaController::class);
-Route::resource('direccion', App\Http\Controllers\DireccionController::class);
+Route::resource('direccions', App\Http\Controllers\DireccionController::class);
 Route::resource('piepaginas', App\Http\Controllers\PiepaginaController::class);
 Route::resource('condicions', App\Http\Controllers\CondicionController::class);
 Route::resource('cotis', App\Http\Controllers\CotiController::class);

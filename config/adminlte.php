@@ -329,11 +329,6 @@ return [
             'can'         => 'tiempoentregas.index',
         ],
         [
-            'text'        => 'Dirección',
-            'url'         => 'direccion',
-            'can'         => 'direccion.index',
-        ],
-        [
             'text'        => 'Pie de página',
             'url'         => 'piepaginas',
             'can'         => 'piepagina.index',

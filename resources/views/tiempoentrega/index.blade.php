@@ -1,8 +1,7 @@
 @extends('layouts.template-crud')
 
-@section('template_title')
-    Tiempoentrega
-@endsection
+
+@section('title', 'Tiempo de entrega')
 
 @section('content')
     <div class="container-fluid">
@@ -13,7 +12,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Tiempoentrega') }}
+                                {{ __('Tiempo de entrega') }}
                             </span>
 
                              <div class="float-right">

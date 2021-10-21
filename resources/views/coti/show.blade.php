@@ -21,43 +21,39 @@
                     <div class="card-body">
 
                         <div class="form-group">
-                            <strong>Id Cliente:</strong>
+                            <strong>Cliente:</strong>
                             {{ $coti->id_cliente }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Asignado:</strong>
+                            <strong>Asignado:</strong>
                             {{ $coti->id_asignado }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Expira:</strong>
-                            {{ $coti->id_expira }}
+                            <strong>Expira:</strong>
+                            {{ $coti->expira->dias }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Moneda:</strong>
-                            {{ $coti->id_moneda }}
+                            <strong>Moneda:</strong>
+                            {{ $coti->moneda->monedas }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Tiempoentrega:</strong>
-                            {{ $coti->id_tiempoentrega }}
+                            <strong>Tiempoentrega:</strong>
+                            {{ $coti->tiempoentrega->dias }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Formapago:</strong>
-                            {{ $coti->id_formapago }}
+                            <strong>Formapago:</strong>
+                            {{ $coti->formapago->pago }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Estado:</strong>
-                            {{ $coti->id_estado }}
+                            <strong>Estado:</strong>
+                            {{ $coti->estado->situacion }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Direccion:</strong>
-                            {{ $coti->id_direccion }}
+                            <strong>Condiciones Generale:</strong>
+                            {{ $coti->condicion->condicionesgenerales }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Condiciones Generale:</strong>
-                            {{ $coti->id_condiciones_generale }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Id Piepagina:</strong>
+                            <strong>Piepagina:</strong>
                             {{ $coti->id_piepagina }}
                         </div>
 

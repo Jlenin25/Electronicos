@@ -49,7 +49,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         request()->validate(User::$rules);
-        $user = User::create($request->only('name','lastname','docu','estado','email') + [
+        $user = User::create($request->only('name','lastname','docu','direccion','estado','email') + [
             'password'=>bcrypt($request->input('password')),
         ]);
         return redirect()->route('users.index')

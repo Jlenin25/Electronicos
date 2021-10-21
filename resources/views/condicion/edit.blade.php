@@ -1,7 +1,7 @@
 @extends('layouts.template-crud')
 
 @section('template_title')
-    Update Condicion
+    Editar Condicion
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Condicion</span>
+                        <span class="card-title">Editar Condicion</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('condicions.update', $condicion->id) }}"  role="form" enctype="multipart/form-data">

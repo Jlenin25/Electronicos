@@ -16,14 +16,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property $id_formapago
  * @property $id_estado
  * @property $id_direccion
- * @property $id_condiciones_generale
+ * @property $id_condicions
  * @property $id_piepagina
  * @property $created_at
  * @property $updated_at
  *
  * @property Asignado $asignado
  * @property Cliente $cliente
- * @property CondicionesGenerale $condicionesGenerale
  * @property Direccion $direccion
  * @property Estado $estado
  * @property Expira $expira
@@ -36,7 +35,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Coti extends Model
 {
-    
+
     static $rules = [
     ];
 
@@ -47,7 +46,7 @@ class Coti extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_cliente','id_asignado','id_expira','id_moneda','id_tiempoentrega','id_formapago','id_estado','id_direccion','id_condiciones_generale','id_piepagina'];
+    protected $fillable = ['id_cliente','id_asignado','id_expira','id_moneda','id_tiempoentrega','id_formapago','id_estado','id_direccion','id_condicions','id_piepagina'];
 
 
     /**
@@ -57,7 +56,7 @@ class Coti extends Model
     {
         return $this->hasOne('App\Models\Asignado', 'id', 'id_asignado');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -65,15 +64,8 @@ class Coti extends Model
     {
         return $this->hasOne('App\Models\Cliente', 'id', 'id_cliente');
     }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function condicionesGenerale()
-    {
-        return $this->hasOne('App\Models\CondicionesGenerale', 'id', 'id_condiciones_generale');
-    }
-    
+
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -81,15 +73,7 @@ class Coti extends Model
     {
         return $this->hasOne('App\Models\Direccion', 'id', 'id_direccion');
     }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function estado()
-    {
-        return $this->hasOne('App\Models\Estado', 'id', 'id_estado');
-    }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -97,7 +81,19 @@ class Coti extends Model
     {
         return $this->hasOne('App\Models\Expira', 'id', 'id_expira');
     }
-    
+    public function Condicion()
+    {
+        return $this->hasOne('App\Models\Condicion', 'id', 'id_condicions');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function Estado()
+    {
+        return $this->hasOne('App\Models\Estado', 'id', 'id_estado');
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -105,7 +101,7 @@ class Coti extends Model
     {
         return $this->hasOne('App\Models\Formapago', 'id', 'id_formapago');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -113,7 +109,7 @@ class Coti extends Model
     {
         return $this->hasOne('App\Models\Moneda', 'id', 'id_moneda');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -121,14 +117,17 @@ class Coti extends Model
     {
         return $this->hasOne('App\Models\Piepagina', 'id', 'id_piepagina');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function tiempoentrega()
+    public function Tiempoentrega()
     {
         return $this->hasOne('App\Models\Tiempoentrega', 'id', 'id_tiempoentrega');
     }
-    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+
 
 }

@@ -1,7 +1,7 @@
 @extends('layouts.template-crud')
 
 @section('template_title')
-    Update Tiempoentrega
+    Editar Tiempo de entrega
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Tiempoentrega</span>
+                        <span class="card-title">Editar Tiempo de entrega</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('tiempoentregas.update', $tiempoentrega->id) }}"  role="form" enctype="multipart/form-data">

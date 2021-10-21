@@ -25,6 +25,14 @@
                             {{ $user->lastname }}
                         </div>
                         <div class="form-group">
+                            <strong>DNI:</strong>
+                            {{ $user->docu }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Dirrecion:</strong>
+                            {{ $user->direccion }}
+                        </div>
+                        <div class="form-group">
                             <strong>Email:</strong>
                             {{ $user->email }}
                         </div>

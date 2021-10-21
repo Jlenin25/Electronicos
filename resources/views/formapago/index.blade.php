@@ -36,8 +36,7 @@
                                     <tr>
                                         <th>No</th>
 
-										<th>Efectivo</th>
-										<th>Credito</th>
+										<th>Pago</th>
 
                                         <th></th>
                                     </tr>
@@ -47,8 +46,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-											<td>{{ $formapago->efectivo }}</td>
-											<td>{{ $formapago->credito }}</td>
+											<td>{{ $formapago->pago }}</td>
 
                                             <td>
                                                 <form action="{{ route('formapagos.destroy',$formapago->id) }}" method="POST">

@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Tiempoentrega extends Model
 {
-    
+
     static $rules = [
 		'dias' => 'required',
     ];
@@ -30,6 +30,11 @@ class Tiempoentrega extends Model
      * @var array
      */
     protected $fillable = ['dias'];
+
+    public function cotis()
+    {
+        return $this->hasMany('App\Models\Coti', 'id_tiempoentrega', 'id');
+    }
 
 
 

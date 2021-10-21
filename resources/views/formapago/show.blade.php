@@ -21,12 +21,8 @@
                     <div class="card-body">
 
                         <div class="form-group">
-                            <strong>Efectivo:</strong>
-                            {{ $formapago->efectivo }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Credito:</strong>
-                            {{ $formapago->credito }}
+                            <strong>Pago:</strong>
+                            {{ $formapago->pago }}
                         </div>
 
                     </div>

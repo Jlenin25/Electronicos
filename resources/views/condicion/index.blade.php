@@ -34,9 +34,9 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
+                                        <th>Nª</th>
 
-										<th>Condicionesgenerales</th>
+										<th>Condiciones generales</th>
 
                                         <th></th>
                                     </tr>

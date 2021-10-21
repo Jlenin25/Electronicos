@@ -34,17 +34,15 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-
+                                        <th>Nª</th>
 										<th>Cliente</th>
 										<th>Asignado</th>
 										<th>Expira</th>
 										<th>Moneda</th>
-										<th>Tiempoentrega</th>
-										<th>Formapago</th>
+										<th>Tiempo de entrega</th>
+										<th>Forma de pago</th>
 										<th>Estado</th>
-										<th>Direccion</th>
-										<th>Condiciones Generale</th>
+										<th>Condiciones Generales</th>
 										<th>Piepagina</th>
 
                                         <th></th>
@@ -57,22 +55,21 @@
 
 											<td>{{ $coti->id_cliente }}</td>
 											<td>{{ $coti->id_asignado }}</td>
-											<td>{{ $coti->id_expira }}</td>
-											<td>{{ $coti->id_moneda }}</td>
-											<td>{{ $coti->id_tiempoentrega }}</td>
-											<td>{{ $coti->id_formapago }}</td>
-											<td>{{ $coti->id_estado }}</td>
-											<td>{{ $coti->id_direccion }}</td>
-											<td>{{ $coti->id_condiciones_generale }}</td>
+											<td>{{ $coti->expira->dias }}</td>
+											<td>{{ $coti->moneda->monedas }}</td>
+											<td>{{ $coti->tiempoentrega->dias }}</td>
+											<td>{{ $coti->formapago->pago }}</td>
+											<td>{{ $coti->estado->situacion }}</td>
+											<td>{{ $coti->condicion->condicionesgenerales }}</td>
 											<td>{{ $coti->id_piepagina }}</td>
 
                                             <td>
                                                 <form action="{{ route('cotis.destroy',$coti->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('cotis.show',$coti->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('cotis.edit',$coti->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('cotis.show',$coti->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('cotis.edit',$coti->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>
                                         </tr>

@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Formapago
  *
  * @property $id
- * @property $efectivo
- * @property $credito
+ * @property $pago
  * @property $created_at
  * @property $updated_at
  *
@@ -21,8 +20,7 @@ class Formapago extends Model
 {
     
     static $rules = [
-		'efectivo' => 'required',
-		'credito' => 'required',
+		'pago' => 'required',
     ];
 
     protected $perPage = 20;
@@ -32,7 +30,7 @@ class Formapago extends Model
      *
      * @var array
      */
-    protected $fillable = ['efectivo','credito'];
+    protected $fillable = ['pago'];
 
 
     /**
