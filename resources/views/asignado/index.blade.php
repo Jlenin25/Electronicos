@@ -1,9 +1,7 @@
-@extends('layouts.app')
-
+@extends('layouts.template-crud')
 @section('template_title')
-    Asignado
+Asignado
 @endsection
-
 @section('content')
     <div class="container-fluid">
         <div class="row">
