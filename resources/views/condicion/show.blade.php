@@ -1,5 +1,4 @@
 @extends('layouts.template-crud')
-
 @section('template_title')
     {{ $condicion->name ?? 'Show Condicion' }}
 @endsection
