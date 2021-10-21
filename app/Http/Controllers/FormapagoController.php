@@ -16,8 +16,7 @@ class FormapagoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         $formapagos = Formapago::paginate();
 
         return view('formapago.index', compact('formapagos'))

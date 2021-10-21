@@ -1,8 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Coti;
+use App\Models\Asignado;
+use App\Models\Moneda;
+use App\Models\Tiempoentrega;
+use App\Models\Formapago;
+use App\Models\Estado;
+use App\Models\Expira;
 use Illuminate\Http\Request;
 
 /**
@@ -29,10 +34,20 @@ class CotiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
+        $asignado = Asignado::all();
+        $moneda = Moneda::all();
+        $tiempoentrega = Tiempoentrega::all();
+        $pago = Formapago::all();
+        $estado = Estado::all();
+        $expira = Expira::all();
         $coti = new Coti();
-        return view('coti.create', compact('coti'));
+        return view('coti.create', compact(
+            'coti', 'asignado',
+            'moneda', 'tiempoentrega',
+            'pago', 'estado',
+            'expira'
+        ));
     }
 
     /**

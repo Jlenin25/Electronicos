@@ -35,9 +35,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-
 										<th>Pago</th>
-
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -45,7 +43,6 @@
                                     @foreach ($formapagos as $formapago)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-
 											<td>{{ $formapago->pago }}</td>
 
                                             <td>

@@ -84,12 +84,9 @@ class MonedaController extends Controller
      * @param  Moneda $moneda
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Moneda $moneda)
-    {
+    public function update(Request $request, Moneda $moneda) {
         request()->validate(Moneda::$rules);
-
         $moneda->update($request->all());
-
         return redirect()->route('monedas.index')
             ->with('success', 'Moneda updated successfully');
     }

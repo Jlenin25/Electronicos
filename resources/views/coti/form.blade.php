@@ -8,39 +8,51 @@
         </div>
         <div class="form-group">
             {{ Form::label('asignado') }}
-            {{ Form::select('id_asignado', $coti, null, ['class' => 'form-control' . ($errors->has('id_asignado') ? ' is-invalid' : ''), 'placeholder' => 'Id Asignado']) }}
-            {{-- <select name="id_cliente" id="">
-                @foreach ($coti as $cot)
-                <option value="{{ $coti->id_asignado }}">{{ $coti->name_asignado }}</option>
+            <select name="" id="">
+                @foreach ($asignado as $a)
+                <option value="">{{ $a->name_asignado }}</option>
                 @endforeach
-            </select> --}}
-            {{-- {{ Form::text('id_asignado', $coti->id_asignado, ['class' => 'form-control' . ($errors->has('id_asignado') ? ' is-invalid' : ''), 'placeholder' => 'Id Asignado']) }} --}}
-            {!! $errors->first('id_asignado', '<div class="invalid-feedback">:message</p>') !!}
+            </select>
         </div>
         <div class="form-group">
             {{ Form::label('expira') }}
-            {{ Form::text('id_expira', $coti->id_expira, ['class' => 'form-control' . ($errors->has('id_expira') ? ' is-invalid' : ''), 'placeholder' => 'Id Expira']) }}
-            {!! $errors->first('id_expira', '<div class="invalid-feedback">:message</p>') !!}
+            <select name="" id="">
+                @foreach ($expira as $ex)
+                <option value="">{{ $ex->dias }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group">
             {{ Form::label('moneda') }}
-            {{ Form::text('id_moneda', $coti->id_moneda, ['class' => 'form-control' . ($errors->has('id_moneda') ? ' is-invalid' : ''), 'placeholder' => 'Id Moneda']) }}
-            {!! $errors->first('id_moneda', '<div class="invalid-feedback">:message</p>') !!}
+            <select name="" id="">
+                @foreach ($moneda as $m)
+                <option value="">{{ $m->monedas }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group">
             {{ Form::label('tiempo de entrega') }}
-            {{ Form::text('id_tiempoentrega', $coti->id_tiempoentrega, ['class' => 'form-control' . ($errors->has('id_tiempoentrega') ? ' is-invalid' : ''), 'placeholder' => 'Id Tiempoentrega']) }}
-            {!! $errors->first('id_tiempoentrega', '<div class="invalid-feedback">:message</p>') !!}
+            <select name="" id="">
+                @foreach ($tiempoentrega as $t)
+                <option value="">{{ $t->dias }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group">
             {{ Form::label('forma de pago') }}
-            {{ Form::text('id_formapago', $coti->id_formapago, ['class' => 'form-control' . ($errors->has('id_formapago') ? ' is-invalid' : ''), 'placeholder' => 'Id Formapago']) }}
-            {!! $errors->first('id_formapago', '<div class="invalid-feedback">:message</p>') !!}
+            <select name="" id="">
+                @foreach ($pago as $p)
+                <option value="">{{ $p->pago }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group">
             {{ Form::label('estado') }}
-            {{ Form::text('id_estado', $coti->id_estado, ['class' => 'form-control' . ($errors->has('id_estado') ? ' is-invalid' : ''), 'placeholder' => 'Id Estado']) }}
-            {!! $errors->first('id_estado', '<div class="invalid-feedback">:message</p>') !!}
+            <select name="" id="">
+                @foreach ($estado as $e)
+                <option value="">{{ $e->situacion }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group">
             {{ Form::label('condiciones generales') }}
