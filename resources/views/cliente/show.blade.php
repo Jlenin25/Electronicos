@@ -21,8 +21,52 @@
                     <div class="card-body">
 
                         <div class="form-group">
-                            <strong>Id User:</strong>
-                            {{ $cliente->id_user }}
+                            <strong>Ruc:</strong>
+                            {{ $cliente->ruc }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Direccion:</strong>
+                            {{ $cliente->direccion }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Celular1:</strong>
+                            {{ $cliente->celular1 }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Email1:</strong>
+                            {{ $cliente->email1 }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Paginaweb:</strong>
+                            {{ $cliente->paginaweb }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Estado:</strong>
+                            {{ $cliente->estado }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Razonsocial:</strong>
+                            {{ $cliente->razonsocial }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Contacto:</strong>
+                            {{ $cliente->contacto }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Celular2:</strong>
+                            {{ $cliente->celular2 }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Email2:</strong>
+                            {{ $cliente->email2 }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Area:</strong>
+                            {{ $cliente->area }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Asignado:</strong>
+                            {{ $cliente->asignado }}
                         </div>
 
                     </div>
