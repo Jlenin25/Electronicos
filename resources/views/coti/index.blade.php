@@ -1,9 +1,7 @@
 @extends('layouts.template-crud')
-
 @section('template_title')
     Coti
 @endsection
-
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -34,17 +32,16 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>Nª</th>
+                                        <th>No</th>
 										<th>Cliente</th>
 										<th>Asignado</th>
 										<th>Expira</th>
 										<th>Moneda</th>
-										<th>Tiempo de entrega</th>
-										<th>Forma de pago</th>
+										<th>Tiempoentrega</th>
+										<th>Formapago</th>
 										<th>Estado</th>
-										<th>Condiciones Generales</th>
 										<th>Piepagina</th>
-
+										<th>Condicions</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -52,24 +49,23 @@
                                     @foreach ($cotis as $coti)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-
-											<td>{{ $coti->id_cliente }}</td>
-											<td>{{ $coti->id_asignado }}</td>
+											<td>{{ $coti->cliente->user->name }}</td>
+											<td>{{ $coti->user->name }}</td>
 											<td>{{ $coti->expira->dias }}</td>
 											<td>{{ $coti->moneda->monedas }}</td>
 											<td>{{ $coti->tiempoentrega->dias }}</td>
 											<td>{{ $coti->formapago->pago }}</td>
 											<td>{{ $coti->estado->situacion }}</td>
+											<td>{{ $coti->piepagina->piedepagina }}</td>
 											<td>{{ $coti->condicion->condicionesgenerales }}</td>
-											<td>{{ $coti->id_piepagina }}</td>
 
                                             <td>
                                                 <form action="{{ route('cotis.destroy',$coti->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('cotis.show',$coti->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('cotis.edit',$coti->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('cotis.show',$coti->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('cotis.edit',$coti->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
                                             </td>
                                         </tr>

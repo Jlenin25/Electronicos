@@ -1,5 +1,4 @@
 @extends('layouts.template-crud')
-
 @section('template_title')
     {{ $coti->name ?? 'Show Coti' }}
 @endsection
@@ -19,42 +18,42 @@
                     </div>
 
                     <div class="card-body">
-
+                        
                         <div class="form-group">
-                            <strong>Cliente:</strong>
+                            <strong>Id Cliente:</strong>
                             {{ $coti->id_cliente }}
                         </div>
                         <div class="form-group">
-                            <strong>Asignado:</strong>
-                            {{ $coti->id_asignado }}
+                            <strong>Id User:</strong>
+                            {{ $coti->id_user }}
                         </div>
                         <div class="form-group">
-                            <strong>Expira:</strong>
-                            {{ $coti->expira->dias }}
+                            <strong>Id Expira:</strong>
+                            {{ $coti->id_expira }}
                         </div>
                         <div class="form-group">
-                            <strong>Moneda:</strong>
-                            {{ $coti->moneda->monedas }}
+                            <strong>Id Moneda:</strong>
+                            {{ $coti->id_moneda }}
                         </div>
                         <div class="form-group">
-                            <strong>Tiempoentrega:</strong>
-                            {{ $coti->tiempoentrega->dias }}
+                            <strong>Id Tiempoentrega:</strong>
+                            {{ $coti->id_tiempoentrega }}
                         </div>
                         <div class="form-group">
-                            <strong>Formapago:</strong>
-                            {{ $coti->formapago->pago }}
+                            <strong>Id Formapago:</strong>
+                            {{ $coti->id_formapago }}
                         </div>
                         <div class="form-group">
-                            <strong>Estado:</strong>
-                            {{ $coti->estado->situacion }}
+                            <strong>Id Estado:</strong>
+                            {{ $coti->id_estado }}
                         </div>
                         <div class="form-group">
-                            <strong>Condiciones Generale:</strong>
-                            {{ $coti->condicion->condicionesgenerales }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Piepagina:</strong>
+                            <strong>Id Piepagina:</strong>
                             {{ $coti->id_piepagina }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Id Condicions:</strong>
+                            {{ $coti->id_condicions }}
                         </div>
 
                     </div>

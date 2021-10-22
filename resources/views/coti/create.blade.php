@@ -1,5 +1,4 @@
 @extends('layouts.template-crud')
-
 @section('template_title')
     Create Coti
 @endsection
@@ -13,7 +12,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Crear Cotizacion</span>
+                        <span class="card-title">Create Coti</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('cotis.store') }}"  role="form" enctype="multipart/form-data">

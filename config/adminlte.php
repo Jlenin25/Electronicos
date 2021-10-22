@@ -294,11 +294,6 @@ return [
             ],
         ],
         [
-            'text'        => 'Asignado',
-            'url'         => 'asignados',
-            'can'         => 'asignado.index',
-        ],
-        [
             'text'        => 'Moneda',
             'url'         => 'monedas',
             'can'         => 'monedas.index',
@@ -332,6 +327,11 @@ return [
             'text'        => 'Pie de página',
             'url'         => 'piepaginas',
             'can'         => 'piepagina.index',
+        ],
+        [
+            'text'        => 'Estado-Cliente',
+            'url'         => 'estadoclientes',
+            'can'         => 'estadocliente.index',
         ],
         [
             'text'        => 'Area',

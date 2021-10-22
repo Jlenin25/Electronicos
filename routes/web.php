@@ -20,7 +20,6 @@ Route::resource('logistica', App\Http\Controllers\LogisticaController::class);
 
 // CRUD - Cotización
 Route::resource('clientes', App\Http\Controllers\ClienteController::class);
-Route::resource('asignados', App\Http\Controllers\AsignadoController::class);
 Route::resource('estados', App\Http\Controllers\EstadoController::class);
 Route::resource('expiras', App\Http\Controllers\ExpiraController::class);
 Route::resource('monedas', App\Http\Controllers\MonedaController::class);
@@ -30,5 +29,6 @@ Route::resource('condicions', App\Http\Controllers\CondicionController::class);
 Route::resource('formapagos', App\Http\Controllers\FormapagoController::class);
 Route::resource('cotis', App\Http\Controllers\CotiController::class);
 Route::resource('areas', App\Http\Controllers\AreaController::class);
+Route::resource('estadoclientes', App\Http\Controllers\EstadoclienteController::class);
 
 Auth::routes();

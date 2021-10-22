@@ -1,5 +1,4 @@
 @extends('layouts.template-crud')
-
 @section('template_title')
     {{ $cliente->name ?? 'Show Cliente' }}
 @endsection
@@ -19,14 +18,14 @@
                     </div>
 
                     <div class="card-body">
-
+                        
                         <div class="form-group">
                             <strong>Ruc:</strong>
                             {{ $cliente->ruc }}
                         </div>
                         <div class="form-group">
-                            <strong>Direccion:</strong>
-                            {{ $cliente->direccion }}
+                            <strong>Id User:</strong>
+                            {{ $cliente->id_user }}
                         </div>
                         <div class="form-group">
                             <strong>Celular1:</strong>
@@ -41,8 +40,8 @@
                             {{ $cliente->paginaweb }}
                         </div>
                         <div class="form-group">
-                            <strong>Estado:</strong>
-                            {{ $cliente->estado }}
+                            <strong>Id Estadocliente:</strong>
+                            {{ $cliente->id_estadocliente }}
                         </div>
                         <div class="form-group">
                             <strong>Razonsocial:</strong>
@@ -61,12 +60,8 @@
                             {{ $cliente->email2 }}
                         </div>
                         <div class="form-group">
-                            <strong>Area:</strong>
-                            {{ $cliente->area }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Asignado:</strong>
-                            {{ $cliente->asignado }}
+                            <strong>Id Area:</strong>
+                            {{ $cliente->id_area }}
                         </div>
 
                     </div>

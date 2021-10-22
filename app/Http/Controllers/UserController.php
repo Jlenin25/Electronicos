@@ -96,7 +96,6 @@ class UserController extends Controller
         $user->roles()->sync($request->roles);
 
         return redirect()->route('users.index',$user)->with('Info','Se asigno los datos correctamente');
-
     }
 
     /**

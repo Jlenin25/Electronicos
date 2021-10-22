@@ -1,13 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Coti;
-use App\Models\Asignado;
+use App\Models\Cliente;
+use App\Models\User;
 use App\Models\Moneda;
-use App\Models\Tiempoentrega;
-use App\Models\Formapago;
-use App\Models\Estado;
 use App\Models\Expira;
+use App\Models\Estado;
+use App\Models\Formapago;
+use App\Models\Tiempoentrega;
+use App\Models\Condicion;
+use App\Models\Piepagina;
+use App\Models\Coti;
 use Illuminate\Http\Request;
 
 /**
@@ -34,19 +37,22 @@ class CotiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
-        $asignado = Asignado::all();
-        $moneda = Moneda::all();
-        $tiempoentrega = Tiempoentrega::all();
-        $pago = Formapago::all();
-        $estado = Estado::all();
-        $expira = Expira::all();
+    public function create()
+    {
         $coti = new Coti();
+        $cliente = Cliente::pluck('id_user', 'id');
+        $asignado = User::pluck('name', 'id');
+        $moneda = Moneda::pluck('monedas', 'id');
+        $expira = Expira::pluck('dias', 'id');
+        $estado = Estado::pluck('situacion', 'id');
+        $pago = Formapago::pluck('pago', 'id');
+        $entrega = Tiempoentrega::pluck('dias', 'id');
+        $condicion = Condicion::pluck('condicionesgenerales', 'id');
+        $pagina = Piepagina::pluck('piedepagina', 'id');
         return view('coti.create', compact(
-            'coti', 'asignado',
-            'moneda', 'tiempoentrega',
-            'pago', 'estado',
-            'expira'
+            'cliente', 'asignado', 'moneda',
+            'expira', 'estado', 'pago', 'entrega',
+            'condicion', 'pagina','coti'
         ));
     }
 
