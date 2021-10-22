@@ -52,9 +52,9 @@
             {!! $errors->first('email2', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('area') }}
-            {{ Form::text('area', $cliente->area, ['class' => 'form-control' . ($errors->has('area') ? ' is-invalid' : ''), 'placeholder' => 'Area']) }}
-            {!! $errors->first('area', '<div class="invalid-feedback">:message</p>') !!}
+            {{ Form::label('Area') }}
+            {{ Form::text('id_area', $cliente->id_area, ['class' => 'form-control' . ($errors->has('id_area') ? ' is-invalid' : ''), 'placeholder' => 'Id Condiciones Generales']) }}
+            {!! $errors->first('id_area', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('asignado') }}

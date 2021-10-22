@@ -29,7 +29,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Cliente extends Model
 {
-    
+
     static $rules = [
 		'ruc' => 'required',
 		'direccion' => 'required',
@@ -41,7 +41,7 @@ class Cliente extends Model
 		'contacto' => 'required',
 		'celular2' => 'required',
 		'email2' => 'required',
-		'area' => 'required',
+		'id_area' => 'required',
 		'asignado' => 'required',
     ];
 
@@ -52,16 +52,20 @@ class Cliente extends Model
      *
      * @var array
      */
-    protected $fillable = ['ruc','direccion','celular1','email1','paginaweb','estado','razonsocial','contacto','celular2','email2','area','asignado'];
+    protected $fillable = ['ruc','direccion','celular1','email1','paginaweb','estado','razonsocial','contacto','celular2','email2','id_area','asignado'];
 
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+    public function area()
+    {
+        return $this->hasOne('App\Models\Area', 'id', 'id_area');
+    }
     public function cotis()
     {
         return $this->hasMany('App\Models\Coti', 'id_cliente', 'id');
     }
-    
+
 
 }

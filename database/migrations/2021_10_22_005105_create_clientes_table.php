@@ -25,7 +25,11 @@ class CreateClientesTable extends Migration
             $table->string('contacto');
             $table->string('celular2');
             $table->string('email2');
-            $table->string('area');
+            $table->foreignId('id_area')
+                  ->nullable()
+                  ->constrained('areas')
+                  ->cascadeOnUpdate()
+                  ->nullOnDelete();
             $table->string('asignado');
             $table->timestamps();
         });

@@ -29,5 +29,6 @@ Route::resource('piepaginas', App\Http\Controllers\PiepaginaController::class);
 Route::resource('condicions', App\Http\Controllers\CondicionController::class);
 Route::resource('formapagos', App\Http\Controllers\FormapagoController::class);
 Route::resource('cotis', App\Http\Controllers\CotiController::class);
+Route::resource('areas', App\Http\Controllers\AreaController::class);
 
 Auth::routes();

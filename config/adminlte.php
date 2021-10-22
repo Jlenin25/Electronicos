@@ -334,6 +334,11 @@ return [
             'can'         => 'piepagina.index',
         ],
         [
+            'text'        => 'Area',
+            'url'         => 'areas',
+            'can'         => 'area.index',
+        ],
+        [
             'text'        => 'INCIDENCIAS',
             'url'         => 'incidencia',
             'icon'        => 'fas fa-hands-helping',

@@ -1,7 +1,7 @@
 @extends('layouts.template-crud')
 
 @section('template_title')
-    Cliente
+    Area
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Cliente') }}
+                                {{ __('Area') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('clientes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('areas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,44 +36,22 @@
                                     <tr>
                                         <th>No</th>
 
-										<th>Ruc</th>
-										<th>Direccion</th>
-										<th>Celular 1</th>
-										<th>Email 1</th>
-										<th>Paginaweb</th>
-										<th>Estado</th>
-										<th>Razon social</th>
-										<th>Contacto</th>
-										<th>Celular 2</th>
-										<th>Email2</th>
-										<th>Area</th>
-										<th>Asignado</th>
+										<th>Derivado</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($clientes as $cliente)
+                                    @foreach ($areas as $area)
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-											<td>{{ $cliente->ruc }}</td>
-											<td>{{ $cliente->direccion }}</td>
-											<td>{{ $cliente->celular1 }}</td>
-											<td>{{ $cliente->email1 }}</td>
-											<td>{{ $cliente->paginaweb }}</td>
-											<td>{{ $cliente->estado }}</td>
-											<td>{{ $cliente->razonsocial }}</td>
-											<td>{{ $cliente->contacto }}</td>
-											<td>{{ $cliente->celular2 }}</td>
-											<td>{{ $cliente->email2 }}</td>
-											<td>{{ $cliente->area->derivado }}</td>
-											<td>{{ $cliente->asignado }}</td>
+											<td>{{ $area->derivado }}</td>
 
                                             <td>
-                                                <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show',$cliente->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.edit',$cliente->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('areas.destroy',$area->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('areas.show',$area->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('areas.edit',$area->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
@@ -86,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $clientes->links() !!}
+                {!! $areas->links() !!}
             </div>
         </div>
     </div>
