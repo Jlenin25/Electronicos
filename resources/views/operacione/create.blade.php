@@ -1,6 +1,6 @@
 @extends('layouts.template-crud')
 @section('template_title')
-    Create Logistica
+    Create Operacione
 @endsection
 
 @section('content')
@@ -12,13 +12,13 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Logistica</span>
+                        <span class="card-title">Create Operacione</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('logisticas.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('operaciones.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('logistica.form')
+                            @include('operacione.form')
 
                         </form>
                     </div>

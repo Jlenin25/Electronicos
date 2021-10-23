@@ -15,8 +15,8 @@ Route::resource('login', App\Http\Controllers\HomeController::class);
 Route::resource('almacens', App\Http\Controllers\AlmacenController::class);
 Route::resource('proveedors', App\Http\Controllers\ProveedorController::class);
 Route::resource('incidencias', App\Http\Controllers\IncidenciaController::class);
-Route::resource('operaciones', App\Http\Controllers\OperacionesController::class);
-Route::resource('logistica', App\Http\Controllers\LogisticaController::class);
+Route::resource('operaciones', App\Http\Controllers\OperacioneController::class);
+Route::resource('logisticas', App\Http\Controllers\LogisticaController::class);
 
 // CRUD - Cotización
 Route::resource('clientes', App\Http\Controllers\ClienteController::class);

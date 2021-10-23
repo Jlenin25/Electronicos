@@ -1,6 +1,6 @@
 @extends('layouts.template-crud')
 @section('template_title')
-    Almacen
+    Operacione
 @endsection
 
 @section('content')
@@ -12,11 +12,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Almacen') }}
+                                {{ __('Operacione') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('almacens.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('operaciones.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -35,32 +35,26 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Codigo</th>
-										<th>Producto</th>
-										<th>Imagen</th>
-										<th>Descripcion</th>
-										<th>Stock Minimo</th>
-										<th>Stock Maximo</th>
+										<th>Id Oper</th>
+										<th>Id Emp</th>
+										<th>Id Estado</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($almacens as $almacen)
+                                    @foreach ($operaciones as $operacione)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $almacen->codigo }}</td>
-											<td>{{ $almacen->producto }}</td>
-											<td>{{ $almacen->imagen }}</td>
-											<td>{{ $almacen->descripcion }}</td>
-											<td>{{ $almacen->stock_minimo }}</td>
-											<td>{{ $almacen->stock_maximo }}</td>
+											<td>{{ $operacione->id_oper }}</td>
+											<td>{{ $operacione->id_emp }}</td>
+											<td>{{ $operacione->id_estado }}</td>
 
                                             <td>
-                                                <form action="{{ route('almacens.destroy',$almacen->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('almacens.show',$almacen->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('almacens.edit',$almacen->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('operaciones.destroy',$operacione->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('operaciones.show',$operacione->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('operaciones.edit',$operacione->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
@@ -73,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $almacens->links() !!}
+                {!! $operaciones->links() !!}
             </div>
         </div>
     </div>

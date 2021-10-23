@@ -242,14 +242,8 @@ return [
             'can'         => 'users.index',
         ],
         [
-            'text'        => 'PROVEEDORES',
-            'url'         => 'proveedors',
-            'icon'        => 'fas fa-users',
-            'can'         => 'proveedores.index',
-        ],
-        [
             'text'        => 'LOGISTICA',
-            'url'         => 'logistica',
+            'url'         => 'logisticas',
             'icon'        => 'fas fa-chart-line',
             'can'         => 'logistica.index',
         ],
@@ -290,6 +284,12 @@ return [
                     'text' => 'Clientes',
                     'url'  => 'clientes',
                     'can' => 'clientes.index',
+                ],
+                [
+                    'text'        => 'PROVEEDORES',
+                    'url'         => 'proveedors',
+                    'icon'        => 'fas fa-users',
+                    'can'         => 'proveedores.index',
                 ],
             ],
         ],

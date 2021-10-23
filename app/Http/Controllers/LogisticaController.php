@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Logistica;
+use Illuminate\Http\Request;
+
+/**
+ * Class LogisticaController
+ * @package App\Http\Controllers
+ */
 class LogisticaController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('can:logistica.index')->only('index');
-        $this->middleware('can:logistica.create')->only('create', 'store');
-        $this->middleware('can:logistica.edit')->only('edit', 'update');
-        $this->middleware('can:logistica.destroy')->only('destroy');
-    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $logisticas =Logistica::all();
-        return view('logistica.index')->with('logisticas',$logisticas);
+        $logisticas = Logistica::paginate();
+
+        return view('logistica.index', compact('logisticas'))
+            ->with('i', (request()->input('page', 1) - 1) * $logisticas->perPage());
     }
 
     /**
@@ -26,79 +31,79 @@ class LogisticaController extends Controller
      */
     public function create()
     {
-        return view('logistica.create');
+        $logistica = new Logistica();
+        return view('logistica.create', compact('logistica'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $logisticas = new Logistica();
-        $logisticas->id_log = $request->get('id_log');
-        $logisticas->id_emp = $request->get('id_emp');
-        $logisticas->id_estado = $request->get('id_estado');
+        request()->validate(Logistica::$rules);
 
-        $logisticas->save();
+        $logistica = Logistica::create($request->all());
 
-        return redirect('/logistica');
+        return redirect()->route('logisticas.index')
+            ->with('success', 'Logistica created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $logistica = Logistica::find($id);
+
+        return view('logistica.show', compact('logistica'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $logistica =Logistica::find($id);
-        return view('logistica.edit')->with('logistica',$logistica);
+        $logistica = Logistica::find($id);
+
+        return view('logistica.edit', compact('logistica'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  Logistica $logistica
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Logistica $logistica)
     {
-        $logistica =Logistica::find($id);
-        $logistica->id_log = $request->get('id_log');
-        $logistica->id_emp = $request->get('id_emp');
-        $logistica->id_estado = $request->get('id_estado');
+        request()->validate(Logistica::$rules);
 
-        $logistica->save();
+        $logistica->update($request->all());
 
-        return redirect('/logistica');
+        return redirect()->route('logisticas.index')
+            ->with('success', 'Logistica updated successfully');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      */
     public function destroy($id)
     {
-        $logistica =Logistica::find($id);
-        $logistica->delete();
-        return redirect('/logistica');
+        $logistica = Logistica::find($id)->delete();
+
+        return redirect()->route('logisticas.index')
+            ->with('success', 'Logistica deleted successfully');
     }
 }

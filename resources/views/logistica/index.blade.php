@@ -1,41 +1,74 @@
 @extends('layouts.template-crud')
-@section('content')
-@can('logistica.create')
-<br>
-<a href="logistica/create" class="btn btn-warning float-right">CREAR</a>
-@endcan
-<table class="table table-dark table-striped mt-4">
-    <thead class="bg-warning">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">ID LOGISTICA</th>
-            <th scope="col">ID EMPRESA</th>
-            <th scope="col">ID ESTADO</th>
-            <th scope="col">ACCIONES</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($logisticas as $logistica)
-        <tr>
-            <td>{{$logistica->id}}</td>
-            <td>{{$logistica->id_log}}</td>
-            <td>{{$logistica->id_emp}}</td>
-            <td>{{$logistica->id_estado}}</td>
-            <td>
-                <form action="{{route ('logistica.destroy',$logistica->id)}}" method="POST">
-                    @can('logistica.edit')
-                    <a href="/logistica/{{ $logistica->id }}/edit" class="btn btn-info">Editar</a>
-                    @endcan
+@section('template_title')
+    Logistica
+@endsection
 
-                    @csrf
-                    @method('DELETE')
-                    @can('logistica.delete')
-                    <button type="submit" class="btn btn-danger">borrar</button>
-                    @endcan
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
+@section('content')
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+
+                            <span id="card_title">
+                                {{ __('Logistica') }}
+                            </span>
+
+                             <div class="float-right">
+                                <a href="{{ route('logisticas.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
+                                  {{ __('Create New') }}
+                                </a>
+                              </div>
+                        </div>
+                    </div>
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead bg-warning">
+                                    <tr>
+                                        <th>No</th>
+                                        
+										<th>Id Log</th>
+										<th>Id Emp</th>
+										<th>Id Estado</th>
+
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($logisticas as $logistica)
+                                        <tr>
+                                            <td>{{ ++$i }}</td>
+                                            
+											<td>{{ $logistica->id_log }}</td>
+											<td>{{ $logistica->id_emp }}</td>
+											<td>{{ $logistica->id_estado }}</td>
+
+                                            <td>
+                                                <form action="{{ route('logisticas.destroy',$logistica->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('logisticas.show',$logistica->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('logisticas.edit',$logistica->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                {!! $logisticas->links() !!}
+            </div>
+        </div>
+    </div>
 @endsection

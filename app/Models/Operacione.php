@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Logistica
+ * Class Operacione
  *
  * @property $id
- * @property $id_log
+ * @property $id_oper
  * @property $id_emp
  * @property $id_estado
  * @property $created_at
@@ -17,11 +17,11 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Logistica extends Model
+class Operacione extends Model
 {
     
     static $rules = [
-		'id_log' => 'required',
+		'id_oper' => 'required',
 		'id_emp' => 'required',
 		'id_estado' => 'required',
     ];
@@ -33,7 +33,7 @@ class Logistica extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_log','id_emp','id_estado'];
+    protected $fillable = ['id_oper','id_emp','id_estado'];
 
 
 
