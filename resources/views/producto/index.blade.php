@@ -2,8 +2,9 @@
 @section('template_title')
     Producto
 @endsection
+<br>
 @section('content')
-    <div class="container-fluid">
+    <div class="">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -18,7 +19,7 @@
                                 @can('productos.create')
                                 <a href="{{ route('productos.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
 
-                                    {{ __('Create New') }}
+                                    {{ __('Añadir') }}
                                 </a>
                                 @endcan
                               </div>
@@ -30,12 +31,11 @@
                         </div>
                     @endif
 
-                    <div class="card-body">
+                    <div class="card-body" >
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead class="thead bg-warning">
                                     <tr>
-                                        <th>Id</th>
 										<th>Nombre</th>
                                         <th>Imagen</th>
 										<th>Precio</th>
@@ -51,7 +51,6 @@
                                 <tbody>
                                     @foreach ($productos as $producto)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
 											<td>{{ $producto->nombre }}</td>
                                             <td>{{ $producto->imagen }}</td>
 											<td>{{ $producto->precio }}</td>
@@ -63,14 +62,14 @@
 											<td>{{ $producto->categoria->nombre }}</td>
                                             <td>
                                                 <form action="{{ route('productos.destroy',$producto->id) }}" method="POST">
-                                                    <a style="background-color:transparent; border:none; margin:0; padding:0" class="btn btn-sm btn-primary " href="{{ route('productos.show',$producto->id) }}"><i class="fa fa-eye"></i></a>
+                                                    <a style="background-color:transparent; border:none; margin:0; padding:0" class="view" href="{{ route('productos.show',$producto->id) }}"><i class="material-icons">&#xE417;</i></a>
                                                     @can('productos.edit')
-                                                    <a style="background-color:transparent; border:none; margin:0; padding:0" class="btn btn-sm btn-success" href="{{ route('productos.edit',$producto->id) }}"><i class="fa fa-edit"></i></a>
+                                                    <a style="background-color:transparent; border:none; margin:0; padding:0" class="edit" href="{{ route('productos.edit',$producto->id) }}"><i class="material-icons">&#xE254;</i></a>
                                                     @endcan
                                                     @csrf
                                                     @method('DELETE')
                                                     @can('productos.delete')
-                                                    <button type="submit" style="background-color:transparent; border:none; margin:0; padding:0" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                    <button type="submit" style="background-color:transparent; border:none; margin:0; padding:0" class="btn btn-danger btn-sm"><i class="material-icons">&#xE872;</i></button>
                                                     @endcan
                                                 </form>
                                             </td>

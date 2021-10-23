@@ -2,7 +2,7 @@
 @section('template_title')
     Expira
 @endsection
-
+<br>
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -17,7 +17,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('expiras.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Añadir') }}
                                 </a>
                               </div>
                         </div>
@@ -33,27 +33,21 @@
                             <table class="table table-hover">
                                 <thead class="thead bg-warning">
                                     <tr>
-                                        <th>No</th>
-
 										<th>Dias</th>
-
-                                        <th></th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($expiras as $expira)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-
 											<td>{{ $expira->dias }}</td>
-
                                             <td>
                                                 <form action="{{ route('expiras.destroy',$expira->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('expiras.show',$expira->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('expiras.edit',$expira->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="view " href="{{ route('expiras.show',$expira->id) }}"><i class="material-icons">&#xE417;</i></a>
+                                                    <a class="edit" href="{{ route('expiras.edit',$expira->id) }}"><i class="material-icons">&#xE254;</i></a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="material-icons">&#xE872;</i></button>
                                                 </form>
                                             </td>
                                         </tr>

@@ -2,7 +2,7 @@
 @section('template_title')
     Proveedor
 @endsection
-
+<br>
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -33,8 +33,6 @@
                             <table class="table table-hover">
                                 <thead class="thead bg-warning">
                                     <tr>
-                                        <th>No</th>
-
 										<th>Ruc</th>
 										<th>Direccion</th>
 										<th>Celular 1</th>
@@ -47,15 +45,12 @@
 										<th>Email 2</th>
 										<th>Area</th>
 										<th>Asignado</th>
-
-                                        <th></th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($proveedors as $proveedor)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-
 											<td>{{ $proveedor->ruc }}</td>
 											<td>{{ $proveedor->direccion }}</td>
 											<td>{{ $proveedor->celular1 }}</td>
@@ -68,14 +63,13 @@
 											<td>{{ $proveedor->email2 }}</td>
 											<td>{{ $proveedor->area->derivado }}</td>
 											<td>{{ $proveedor->user->name }}</td>
-
                                             <td>
                                                 <form action="{{ route('proveedors.destroy',$proveedor->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('proveedors.show',$proveedor->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('proveedors.edit',$proveedor->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="view" href="{{ route('proveedors.show',$proveedor->id) }}"><i class="material-icons">&#xE417;</i></a>
+                                                    <a class="edit" href="{{ route('proveedors.edit',$proveedor->id) }}"><i class="material-icons">&#xE254;</i></a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="material-icons">&#xE872;</i></button>
                                                 </form>
                                             </td>
                                         </tr>

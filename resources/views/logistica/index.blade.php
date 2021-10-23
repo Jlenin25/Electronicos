@@ -2,7 +2,7 @@
 @section('template_title')
     Logistica
 @endsection
-
+<br>
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -17,7 +17,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('logisticas.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Añadir') }}
                                 </a>
                               </div>
                         </div>
@@ -33,31 +33,25 @@
                             <table class="table table-hover">
                                 <thead class="thead bg-warning">
                                     <tr>
-                                        <th>No</th>
-                                        
-										<th>Id Log</th>
-										<th>Id Emp</th>
-										<th>Id Estado</th>
-
-                                        <th></th>
+										<th>Logística</th>
+										<th>Empresa</th>
+										<th>Estado</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($logisticas as $logistica)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
 											<td>{{ $logistica->id_log }}</td>
 											<td>{{ $logistica->id_emp }}</td>
 											<td>{{ $logistica->id_estado }}</td>
-
                                             <td>
                                                 <form action="{{ route('logisticas.destroy',$logistica->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('logisticas.show',$logistica->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('logisticas.edit',$logistica->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="view" href="{{ route('logisticas.show',$logistica->id) }}"><i class="material-icons">&#xE417;</i></a>
+                                                    <a class="edit" href="{{ route('logisticas.edit',$logistica->id) }}"><i class="material-icons">&#xE254;</i></a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"><i class="material-icons">&#xE872;</i></button>
                                                 </form>
                                             </td>
                                         </tr>

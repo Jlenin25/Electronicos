@@ -3,7 +3,7 @@
 @section('template_title')
     Formapago
 @endsection
-
+<br>
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -18,7 +18,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('formapagos.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Añadir') }}
                                 </a>
                               </div>
                         </div>
@@ -34,24 +34,21 @@
                             <table class="table table-hover">
                                 <thead class="thead bg-warning">
                                     <tr>
-                                        <th>No</th>
-										<th>Pago</th>
-                                        <th></th>
+										<th>Forma de Pago</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($formapagos as $formapago)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
 											<td>{{ $formapago->pago }}</td>
-
                                             <td>
                                                 <form action="{{ route('formapagos.destroy',$formapago->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('formapagos.show',$formapago->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('formapagos.edit',$formapago->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="view" href="{{ route('formapagos.show',$formapago->id) }}"><i class="material-icons">&#xE417;</i></a>
+                                                    <a class="edit" href="{{ route('formapagos.edit',$formapago->id) }}"><i class="material-icons">&#xE254;</i></a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="material-icons">&#xE872;</i></button>
                                                 </form>
                                             </td>
                                         </tr>

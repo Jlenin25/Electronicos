@@ -1,8 +1,6 @@
 @extends('layouts.template-crud')
-@section('template_title')
-    Incidencia
-@endsection
-
+@section('title', 'Incidencias')
+<br>
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -12,12 +10,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Incidencia') }}
+                                {{ __('Incidencias') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('incidencias.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Añadir') }}
                                 </a>
                               </div>
                         </div>
@@ -33,25 +31,20 @@
                             <table class="table table-hover">
                                 <thead class="thead bg-warning">
                                     <tr>
-                                        <th>No</th>
-                                        
-										<th>Id Inci</th>
+										<th>Incidencia</th>
 										<th>Nombre</th>
 										<th>Tipo</th>
 										<th>Categoria</th>
-										<th>Id Emp</th>
-										<th>Id Clie</th>
-										<th>Id Prov</th>
-										<th>Id Estado</th>
-
-                                        <th></th>
+										<th>Empresa</th>
+										<th>Cliente</th>
+										<th>Proveedor</th>
+										<th>Estado</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($incidencias as $incidencia)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
 											<td>{{ $incidencia->id_inci }}</td>
 											<td>{{ $incidencia->nombre }}</td>
 											<td>{{ $incidencia->tipo }}</td>
@@ -63,11 +56,11 @@
 
                                             <td>
                                                 <form action="{{ route('incidencias.destroy',$incidencia->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('incidencias.show',$incidencia->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('incidencias.edit',$incidencia->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="view" href="{{ route('incidencias.show',$incidencia->id) }}"><i class="material-icons">&#xE417;</i></a>
+                                                    <a class="edit" href="{{ route('incidencias.edit',$incidencia->id) }}"><i class="material-icons">&#xE254;</i></a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="material-icons">&#xE872;</i></button>
                                                 </form>
                                             </td>
                                         </tr>

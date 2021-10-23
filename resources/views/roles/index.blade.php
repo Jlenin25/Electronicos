@@ -18,7 +18,6 @@
             <table class="table table-hover">
                 <thead class="bg-warning">
                     <tr>
-                        <th>ID</th>
                         <th>Role</th>
                         <th colspan="2"></th>
                     </tr>
@@ -26,7 +25,6 @@
                 <tbody>
                     @foreach ($roles as $role)
                         <tr>
-                            <td>{{$role->id}}</td>
                             <td>{{$role->name}}</td>
                             <td width="10px">
                                 @can('roles.edit')

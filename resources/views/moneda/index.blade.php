@@ -2,7 +2,7 @@
 @section('template_title')
     Moneda
 @endsection
-
+<br>
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -17,7 +17,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('monedas.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Añadir') }}
                                 </a>
                               </div>
                         </div>
@@ -33,27 +33,21 @@
                             <table class="table table-hover">
                                 <thead class="thead bg-warning">
                                     <tr>
-                                        <th>No</th>
-
 										<th>Monedas</th>
-
-                                        <th></th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($monedas as $moneda)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-
 											<td>{{ $moneda->monedas }}</td>
-
                                             <td>
                                                 <form action="{{ route('monedas.destroy',$moneda->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('monedas.show',$moneda->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('monedas.edit',$moneda->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="view" href="{{ route('monedas.show',$moneda->id) }}"><i class="material-icons">&#xE417;</i></a>
+                                                    <a class="edit" href="{{ route('monedas.edit',$moneda->id) }}"><i class="material-icons">&#xE254;</i></a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="material-icons">&#xE872;</i></button>
                                                 </form>
                                             </td>
                                         </tr>

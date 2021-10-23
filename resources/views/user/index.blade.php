@@ -2,6 +2,7 @@
 @section('template_title')
 Usuarios
 @endsection
+<br>
 @section('content')
 <div class="">
     <div class="table-responsive">
@@ -12,7 +13,7 @@ Usuarios
                     <div class="col-sm-4">
                         @can('users.create')
                         <div class="float-right">
-                            <a href="{{ route('users.create') }}" class="btn btn-warning btn-sm float-right"  data-placement="left">Crear</a>
+                            <a href="{{ route('users.create') }}" class="btn btn-warning btn-sm float-right"  data-placement="left">Añadir</a>
                         </div>
                         @endcan
                         <form>
