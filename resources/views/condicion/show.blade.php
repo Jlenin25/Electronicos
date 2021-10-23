@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="card-body">
-
+                        
                         <div class="form-group">
                             <strong>Condicionesgenerales:</strong>
                             {{ $condicion->condicionesgenerales }}

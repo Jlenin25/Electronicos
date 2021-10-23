@@ -1,48 +1,80 @@
 @extends('layouts.template-crud')
+@section('template_title')
+    Almacen
+@endsection
+
 @section('content')
-@can('almacen.create')
-<br>
-<a href="almacen/create" class="btn btn-warning float-right">CREAR</a>
-@endcan
-<table class="table table-dark table-striped mt-4">
-    <thead class="bg-warning">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Código</th>
-            <th scope="col">Producto</th>
-            <th scope="col">Imagén</th>
-            <th scope="col">Descripción</th>
-            <th scope="col">Stock Minimo</th>
-            <th scope="col">Stock Maximo</th>
-            <th scope="col">ACCIONES</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($almacens as $almacen)
-        <tr>
-            <td>{{$almacen->id}}</td>
-            <td>{{$almacen->codigo}}</td>
-            <td>{{$almacen->producto}}</td>
-            <td>{{$almacen->imagen}}</td>
-            <td>{{$almacen->descripcion}}</td>
-            <td>{{$almacen->stock_minimo}}</td>
-            <td>{{$almacen->stock_maximo}}</td>
-            <td>
-                <form action="{{route ('almacen.destroy',$almacen->id)}}" method="POST">
-                    @can('almacen.edit')
-                    <a href="/almacen/{{ $almacen->id }}/edit" class="btn btn-info">Editar</a>
-                    @endcan
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                    @csrf
-                    @method('DELETE')
+                            <span id="card_title">
+                                {{ __('Almacen') }}
+                            </span>
 
-                    @can('almacen.delete')
-                    <button type="submit" class="btn btn-danger">borrar</button>
-                    @endcan
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
+                             <div class="float-right">
+                                <a href="{{ route('almacens.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                  {{ __('Create New') }}
+                                </a>
+                              </div>
+                        </div>
+                    </div>
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead">
+                                    <tr>
+                                        <th>No</th>
+                                        
+										<th>Codigo</th>
+										<th>Producto</th>
+										<th>Imagen</th>
+										<th>Descripcion</th>
+										<th>Stock Minimo</th>
+										<th>Stock Maximo</th>
+
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($almacens as $almacen)
+                                        <tr>
+                                            <td>{{ ++$i }}</td>
+                                            
+											<td>{{ $almacen->codigo }}</td>
+											<td>{{ $almacen->producto }}</td>
+											<td>{{ $almacen->imagen }}</td>
+											<td>{{ $almacen->descripcion }}</td>
+											<td>{{ $almacen->stock_minimo }}</td>
+											<td>{{ $almacen->stock_maximo }}</td>
+
+                                            <td>
+                                                <form action="{{ route('almacens.destroy',$almacen->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('almacens.show',$almacen->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('almacens.edit',$almacen->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                {!! $almacens->links() !!}
+            </div>
+        </div>
+    </div>
 @endsection

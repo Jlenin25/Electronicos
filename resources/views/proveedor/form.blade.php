@@ -28,7 +28,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('estado cliente') }}
-            {{ Form::text('id_estadocliente', $proveedor->id_estadocliente, ['class' => 'form-control' . ($errors->has('id_estadocliente') ? ' is-invalid' : ''), 'placeholder' => 'Id Estadocliente']) }}
+            {{ Form::select('id_estadocliente', $estado, $proveedor->id_estadocliente, ['class' => 'form-control' . ($errors->has('id_estadocliente') ? ' is-invalid' : ''), 'placeholder' => 'Id Estadocliente']) }}
             {!! $errors->first('id_estadocliente', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
@@ -58,7 +58,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('asignado') }}
-            {{ Form::text('id_user', $proveedor->id_user, ['class' => 'form-control' . ($errors->has('id_user') ? ' is-invalid' : ''), 'placeholder' => 'Id User']) }}
+            {{ Form::select('id_user', $asignado, $proveedor->id_user, ['class' => 'form-control' . ($errors->has('id_user') ? ' is-invalid' : ''), 'placeholder' => 'Id User']) }}
             {!! $errors->first('id_user', '<div class="invalid-feedback">:message</p>') !!}
         </div>
 

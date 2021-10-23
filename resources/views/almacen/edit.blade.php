@@ -1,35 +1,30 @@
 @extends('layouts.template-crud')
-@section('content')
-<h2>EDITAR REGISTRO PARA ALMACEN</h2>
+@section('template_title')
+    Update Almacen
+@endsection
 
-<form action="/almacen/{{$almacen->id}}" method="POST">
-    @csrf
-    @method('PUT')
-    <div class="mb-3">
-        <label for="" class="form-label">Códido</label>
-        <input id="codigo" name="codigo" type="text" class="form-control" value="{{$almacen->codigo}}">
-    </div>
-    <div class="mb-3">
-        <label for="" class="form-label">Producto</label>
-        <input id="producto" name="producto" type="text" class="form-control" value="{{$almacen->producto}}">
-    </div>
-    <div class="mb-3">
-        <label for="" class="form-label">Imagén</label>
-        <input id="imagen" name="imagen" type="file" size="50" class="form-control" value="{{$almacen->imagen}}">
-    </div>
-    <div class="mb-3">
-        <label for="" class="form-label">Descripción</label>
-        <input id="descripcion" name="descripcion" type="text" class="form-control" value="{{$almacen->descripcion}}">
-    </div>
-    <div class="mb-3">
-        <label for="" class="form-label">Stock Minímo</label>
-        <input id="stock_minimo" name="stock_minimo" type="number" class="form-control" value="{{$almacen->stock_minimo}}">
-    </div>
-    <div class="mb-3">
-        <label for="" class="form-label">Stock Maxímo</label>
-        <input id="stock_maximo" name="stock_maximo" type="number" class="form-control" value="{{$almacen->stock_maximo}}">
-    </div>
-    <a href="/almacen" class="btn btn-secondary">Cancelar</a>
-    <button type="submit" class="btn btn-primary">Guardar</button>
-</form>
+@section('content')
+    <section class="content container-fluid">
+        <div class="">
+            <div class="col-md-12">
+
+                @includeif('partials.errors')
+
+                <div class="card card-default">
+                    <div class="card-header">
+                        <span class="card-title">Update Almacen</span>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('almacens.update', $almacen->id) }}"  role="form" enctype="multipart/form-data">
+                            {{ method_field('PATCH') }}
+                            @csrf
+
+                            @include('almacen.form')
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

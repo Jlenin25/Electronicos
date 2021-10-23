@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Incidencia;
+use Illuminate\Http\Request;
+
+/**
+ * Class IncidenciaController
+ * @package App\Http\Controllers
+ */
 class IncidenciaController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('can:incidencias.index')->only('index');
-        $this->middleware('can:incidencias.create')->only('create', 'store');
-        $this->middleware('can:incidencias.edit')->only('edit', 'update');
-        $this->middleware('can:incidencias.destroy')->only('destroy');
-    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $incidencias =Incidencia::all();
-        return view('incidencia.index')->with('incidencias',$incidencias);
+        $incidencias = Incidencia::paginate();
+
+        return view('incidencia.index', compact('incidencias'))
+            ->with('i', (request()->input('page', 1) - 1) * $incidencias->perPage());
     }
 
     /**
@@ -26,89 +31,79 @@ class IncidenciaController extends Controller
      */
     public function create()
     {
-        return view('incidencia.create');
+        $incidencia = new Incidencia();
+        return view('incidencia.create', compact('incidencia'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $incidencias = new Incidencia();
-        $incidencias->id_inci = $request->get('id_inci');
-        $incidencias->nombre = $request->get('nombre');
-        $incidencias->tipo = $request->get('tipo');
-        $incidencias->categoria = $request->get('categoria');
-        $incidencias->id_emp = $request->get('id_emp');
-        $incidencias->id_clie = $request->get('id_clie');
-        $incidencias->id_prov = $request->get('id_prov');
-        $incidencias->id_estado = $request->get('id_estado');
+        request()->validate(Incidencia::$rules);
 
-        $incidencias->save();
+        $incidencia = Incidencia::create($request->all());
 
-        return redirect('/incidencia');
+        return redirect()->route('incidencias.index')
+            ->with('success', 'Incidencia created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $incidencia = Incidencia::find($id);
+
+        return view('incidencia.show', compact('incidencia'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $incidencia =Incidencia::find($id);
-        return view('incidencia.edit')->with('incidencia',$incidencia);
+        $incidencia = Incidencia::find($id);
+
+        return view('incidencia.edit', compact('incidencia'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  Incidencia $incidencia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Incidencia $incidencia)
     {
-        $incidencia =Incidencia::find($id);
-        $incidencia->id_inci = $request->get('id_inci');
-        $incidencia->nombre = $request->get('nombre');
-        $incidencia->tipo = $request->get('tipo');
-        $incidencia->categoria = $request->get('categoria');
-        $incidencia->id_emp = $request->get('id_emp');
-        $incidencia->id_clie = $request->get('id_clie');
-        $incidencia->id_prov = $request->get('id_prov');
-        $incidencia->id_estado = $request->get('id_estado');
+        request()->validate(Incidencia::$rules);
 
-        $incidencia->save();
+        $incidencia->update($request->all());
 
-        return redirect('/incidencia');
+        return redirect()->route('incidencias.index')
+            ->with('success', 'Incidencia updated successfully');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      */
     public function destroy($id)
     {
-        $incidencia =Incidencia::find($id);
-        $incidencia->delete();
-        return redirect('/incidencia');
+        $incidencia = Incidencia::find($id)->delete();
+
+        return redirect()->route('incidencias.index')
+            ->with('success', 'Incidencia deleted successfully');
     }
 }

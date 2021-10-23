@@ -15,7 +15,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('cotis.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('cotis.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>

@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\EstadoCliente;
+use App\Models\User;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,13 @@ class ClienteController extends Controller
     public function create()
     {
         $cliente = new Cliente();
-        return view('cliente.create', compact('cliente'));
+        $asignado = User::pluck('name', 'id');
+        $estado = Estadocliente::pluck('situacion', 'id');
+        return view('cliente.create', compact(
+            'cliente',
+            'asignado',
+            'estado'
+        ));
     }
 
     /**

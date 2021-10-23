@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Almacen;
+use Illuminate\Http\Request;
+
+/**
+ * Class AlmacenController
+ * @package App\Http\Controllers
+ */
 class AlmacenController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('can:almacen.index')->only('index');
-        $this->middleware('can:almacen.create')->only('create', 'store');
-        $this->middleware('can:almacen.edit')->only('edit', 'update');
-        $this->middleware('can:almacen.destroy')->only('destroy');
-    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $almacens =Almacen::all();
-        return view('almacen.index')->with('almacens',$almacens);
+        $almacens = Almacen::paginate();
+
+        return view('almacen.index', compact('almacens'))
+            ->with('i', (request()->input('page', 1) - 1) * $almacens->perPage());
     }
 
     /**
@@ -26,85 +31,79 @@ class AlmacenController extends Controller
      */
     public function create()
     {
-        return view('almacen.create');
+        $almacen = new Almacen();
+        return view('almacen.create', compact('almacen'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $almacens = new Almacen();
-        $almacens->codigo = $request->get('codigo');
-        $almacens->producto = $request->get('producto');
-        $almacens->imagen = $request->get('imagen');
-        $almacens->descripcion = $request->get('descripcion');
-        $almacens->stock_minimo = $request->get('stock_minimo');
-        $almacens->stock_maximo = $request->get('stock_maximo');
+        request()->validate(Almacen::$rules);
 
-        $almacens->save();
+        $almacen = Almacen::create($request->all());
 
-        return redirect('/almacen');
+        return redirect()->route('almacens.index')
+            ->with('success', 'Almacen created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $almacen = Almacen::find($id);
+
+        return view('almacen.show', compact('almacen'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $almacen =Almacen::find($id);
-        return view('almacen.edit')->with('almacen',$almacen);
+        $almacen = Almacen::find($id);
+
+        return view('almacen.edit', compact('almacen'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  Almacen $almacen
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Almacen $almacen)
     {
-        $almacen =Almacen::find($id);
-        $almacen->codigo = $request->get('codigo');
-        $almacen->producto = $request->get('producto');
-        $almacen->imagen = $request->get('imagen');
-        $almacen->descripcion = $request->get('descripcion');
-        $almacen->stock_minimo = $request->get('stock_minimo');
-        $almacen->stock_maximo = $request->get('stock_maximo');
+        request()->validate(Almacen::$rules);
 
-        $almacen->save();
+        $almacen->update($request->all());
 
-        return redirect('/almacen');
+        return redirect()->route('almacens.index')
+            ->with('success', 'Almacen updated successfully');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      */
     public function destroy($id)
     {
-        $almacen =Almacen::find($id);
-        $almacen->delete();
-        return redirect('/almacen');
+        $almacen = Almacen::find($id)->delete();
+
+        return redirect()->route('almacens.index')
+            ->with('success', 'Almacen deleted successfully');
     }
 }

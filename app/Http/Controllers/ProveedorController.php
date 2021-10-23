@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\EstadoCliente;
+use App\Models\User;
 use App\Models\Proveedor;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,13 @@ class ProveedorController extends Controller
     public function create()
     {
         $proveedor = new Proveedor();
-        return view('proveedor.create', compact('proveedor'));
+        $asignado = User::pluck('name', 'id');
+        $estado = Estadocliente::pluck('situacion', 'id');
+        return view('proveedor.create', compact(
+            'proveedor',
+            'asignado',
+            'estado'
+        ));
     }
 
     /**

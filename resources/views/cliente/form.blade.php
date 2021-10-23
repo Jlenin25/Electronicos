@@ -2,14 +2,14 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('name') }}
-            {{ Form::text('name', $cliente->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Name']) }}
-            {!! $errors->first('name', '<div class="invalid-feedback">:message</p>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('ruc') }}
             {{ Form::text('ruc', $cliente->ruc, ['class' => 'form-control' . ($errors->has('ruc') ? ' is-invalid' : ''), 'placeholder' => 'Ruc']) }}
             {!! $errors->first('ruc', '<div class="invalid-feedback">:message</p>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('direccion') }}
+            {{ Form::text('direccion', $cliente->direccion, ['class' => 'form-control' . ($errors->has('direccion') ? ' is-invalid' : ''), 'placeholder' => 'Direccion']) }}
+            {!! $errors->first('direccion', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('celular1') }}
@@ -28,7 +28,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('id_estadocliente') }}
-            {{ Form::text('id_estadocliente', $cliente->id_estadocliente, ['class' => 'form-control' . ($errors->has('id_estadocliente') ? ' is-invalid' : ''), 'placeholder' => 'Id Estadocliente']) }}
+            {{ Form::select('id_estadocliente', $estado, $cliente->id_estadocliente, ['class' => 'form-control' . ($errors->has('id_estadocliente') ? ' is-invalid' : ''), 'placeholder' => 'Id Estadocliente']) }}
             {!! $errors->first('id_estadocliente', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
@@ -58,7 +58,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('id_user') }}
-            {{ Form::text('id_user', $cliente->id_user, ['class' => 'form-control' . ($errors->has('id_user') ? ' is-invalid' : ''), 'placeholder' => 'Id User']) }}
+            {{ Form::select('id_user', $asignado, $cliente->id_user, ['class' => 'form-control' . ($errors->has('id_user') ? ' is-invalid' : ''), 'placeholder' => 'Id User']) }}
             {!! $errors->first('id_user', '<div class="invalid-feedback">:message</p>') !!}
         </div>
 

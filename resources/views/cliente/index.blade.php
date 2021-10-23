@@ -16,7 +16,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('clientes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('clientes.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -31,12 +31,12 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
-                                <thead class="thead">
+                                <thead class="thead bg-warning">
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Name</th>
 										<th>Ruc</th>
+										<th>Direccion</th>
 										<th>Celular1</th>
 										<th>Email1</th>
 										<th>Paginaweb</th>
@@ -56,8 +56,8 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $cliente->name }}</td>
 											<td>{{ $cliente->ruc }}</td>
+											<td>{{ $cliente->direccion }}</td>
 											<td>{{ $cliente->celular1 }}</td>
 											<td>{{ $cliente->email1 }}</td>
 											<td>{{ $cliente->paginaweb }}</td>

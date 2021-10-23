@@ -20,12 +20,12 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Name:</strong>
-                            {{ $cliente->name }}
-                        </div>
-                        <div class="form-group">
                             <strong>Ruc:</strong>
                             {{ $cliente->ruc }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Direccion:</strong>
+                            {{ $cliente->direccion }}
                         </div>
                         <div class="form-group">
                             <strong>Celular1:</strong>

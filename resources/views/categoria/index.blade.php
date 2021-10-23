@@ -14,7 +14,7 @@
                             </span>
                              <div class="float-right">
                                 @can('categorias.create')
-                                <a href="{{ route('categorias.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('categorias.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
                                     {{ __('Create New') }}
                                   </a>
                                 @endcan

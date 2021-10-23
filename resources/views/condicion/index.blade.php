@@ -16,7 +16,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('condicions.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('condicions.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -31,11 +31,11 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
-                                <thead class="thead">
+                                <thead class="thead bg-warning">
                                     <tr>
-                                        <th>Nª</th>
-
-										<th>Condiciones generales</th>
+                                        <th>No</th>
+                                        
+										<th>Condicionesgenerales</th>
 
                                         <th></th>
                                     </tr>
@@ -44,7 +44,7 @@
                                     @foreach ($condicions as $condicion)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-
+                                            
 											<td>{{ $condicion->condicionesgenerales }}</td>
 
                                             <td>

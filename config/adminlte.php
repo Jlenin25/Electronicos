@@ -102,12 +102,12 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-warning',
+    'classes_auth_card' => 'card-outline card-primary',
     'classes_auth_header' => '',
     'classes_auth_body' => '',
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
-    'classes_auth_btn' => 'btn-flat btn-warning',
+    'classes_auth_btn' => 'btn-flat btn-primary',
 
     /*
     |--------------------------------------------------------------------------
@@ -122,7 +122,7 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => 'bg-warning',
+    'classes_brand' => '',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
@@ -255,7 +255,7 @@ return [
         ],
         [
             'text'        => 'ALMACEN',
-            'url'         => 'almacen',
+            'url'         => 'almacens',
             'icon'        => 'fas fa-box-open',
             'can'         => 'almacen.index',
         ],
@@ -278,16 +278,8 @@ return [
             'can'         => 'productos.index',
         ],
         [
-            'text'        => 'INCIDENCIAS',
-            'url'         => 'incidencia',
-            'icon'        => 'fas fa-hands-helping',
-            'can'         => 'incidencias.index',
-        ],
-        [
             'text'    => 'Ventas',
             'icon'    => 'fas fa-fw fa-share',
-            'label'   => 'Nuevo',
-            'label_color'   => 'warning',
             'submenu' => [
                 [
                     'text' => 'Cotización',
@@ -337,22 +329,11 @@ return [
             'can'         => 'piepagina.index',
         ],
         [
-            'text'        => 'Estado-Cliente',
-            'url'         => 'estadoclientes',
-            'can'         => 'estadocliente.index',
-        ],
-        [
-            'text'        => 'Area',
-            'url'         => 'areas',
-            'can'         => 'area.index',
-        ],
-        [
             'text'        => 'INCIDENCIAS',
-            'url'         => 'incidencia',
+            'url'         => 'incidencias',
             'icon'        => 'fas fa-hands-helping',
             'can'         => 'incidencias.index',
         ],
-        ['header' => 'CONFIGURACION DE ROLES'],
         [
             'text'        => 'ADMIN (ROLES)',
             'url'         => 'roles',
