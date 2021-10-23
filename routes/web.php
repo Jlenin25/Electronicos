@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('', App\Http\Controllers\GeneralController::class);
 
 // CRUD normal
-Route::resource('dashboard', App\Http\Controllers\DashboardController::class);
+Route::resource('dashboards', App\Http\Controllers\DashboardController::class);
 Route::resource('users', App\Http\Controllers\UserController::class);
 Route::resource('productos', App\Http\Controllers\ProductoController::class);
 Route::resource('categorias', App\Http\Controllers\CategoriaController::class);

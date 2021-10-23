@@ -66,7 +66,7 @@ return [
 
     'usermenu_enabled' => true,
     'usermenu_header' => true,
-    'usermenu_header_class' => 'bg-primary',
+    'usermenu_header_class' => 'bg-info',
     'usermenu_image' => true,
     'usermenu_desc' => null,
     'usermenu_profile_url' => true,
@@ -102,12 +102,12 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
+    'classes_auth_card' => 'card-outline card-warning',
     'classes_auth_header' => '',
     'classes_auth_body' => '',
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
-    'classes_auth_btn' => 'btn-flat btn-primary',
+    'classes_auth_btn' => 'btn-flat btn-warning',
 
     /*
     |--------------------------------------------------------------------------
@@ -127,9 +127,9 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-danger elevation-4',
+    'classes_sidebar' => 'sidebar-dark-warning elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-dark navbar-danger',
+    'classes_topnav' => 'navbar-dark navbar-warning',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -231,7 +231,7 @@ return [
         // Sidebar items:
         [
             'text'        => 'DASHBOARD',
-            'url'         => 'dashboard',
+            'url'         => 'dashboards',
             'icon'        => 'fas fa-fw fa-lock',
             'can'         => 'dashboard.index',
         ],

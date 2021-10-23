@@ -1,13 +1,29 @@
 @extends('layouts.template-crud')
+@section('template_title')
+    Create Dashboard
+@endsection
+
 @section('content')
-<h2>CREAR REGISTRO PARA DASHBOARD</h2>
-<form action="/dashboard" method="POST">
-@csrf
-<div class="mb-3">
-    <label for="" class="form-label">ID DASHBOARD</label>
-    <input id="id_das" name="id_das" type="text" class="form-control" tabindex="1">
-</div>
-<a href="/dashboard" class="btn btn-secondary" tabindex="2">Cancelar</a>
-<button type="submit" class="btn btn-primary" tabindex="1">Guardar</button>
-</form>
+    <section class="content container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                @includeif('partials.errors')
+
+                <div class="card card-default">
+                    <div class="card-header">
+                        <span class="card-title">Create Dashboard</span>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('dashboards.store') }}"  role="form" enctype="multipart/form-data">
+                            @csrf
+
+                            @include('dashboard.form')
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
