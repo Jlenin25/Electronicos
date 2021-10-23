@@ -1,6 +1,4 @@
 @extends('layouts.template-crud')
-
-
 @section('title', 'Tiempo de entrega')
 
 @section('content')
@@ -30,7 +28,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table class="table table-hover">
                                 <thead class="thead bg-warning">
                                     <tr>
                                         <th>No</th>

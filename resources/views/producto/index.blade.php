@@ -32,7 +32,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table class="table table-hover">
                                 <thead class="thead bg-warning">
                                     <tr>
                                         <th>Id</th>
@@ -59,18 +59,18 @@
 											<td>{{ $producto->cantidad }}</td>
 											<td>{{ $producto->descripcion }}</td>
 											<td>{{ $producto->stock }}</td>
-                                            <td>{{ $producto->proveedor->codigo }}</td>
+                                            <td>{{ $producto->proveedor->contaco }}</td>
 											<td>{{ $producto->categoria->nombre }}</td>
                                             <td>
                                                 <form action="{{ route('productos.destroy',$producto->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('productos.show',$producto->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a style="background-color:transparent; border:none; margin:0; padding:0" class="btn btn-sm btn-primary " href="{{ route('productos.show',$producto->id) }}"><i class="fa fa-eye"></i></a>
                                                     @can('productos.edit')
-                                                    <a class="btn btn-sm btn-success" href="{{ route('productos.edit',$producto->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a style="background-color:transparent; border:none; margin:0; padding:0" class="btn btn-sm btn-success" href="{{ route('productos.edit',$producto->id) }}"><i class="fa fa-edit"></i></a>
                                                     @endcan
                                                     @csrf
                                                     @method('DELETE')
                                                     @can('productos.delete')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" style="background-color:transparent; border:none; margin:0; padding:0" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                                                     @endcan
                                                 </form>
                                             </td>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\EstadoCliente;
 use App\Models\User;
+use App\Models\Area;
 use App\Models\Proveedor;
 use Illuminate\Http\Request;
 
@@ -35,10 +36,12 @@ class ProveedorController extends Controller
         $proveedor = new Proveedor();
         $asignado = User::pluck('name', 'id');
         $estado = Estadocliente::pluck('situacion', 'id');
+        $area = Area::pluck('derivado', 'id');
         return view('proveedor.create', compact(
             'proveedor',
             'asignado',
-            'estado'
+            'estado',
+            'area'
         ));
     }
 
@@ -80,8 +83,15 @@ class ProveedorController extends Controller
     public function edit($id)
     {
         $proveedor = Proveedor::find($id);
-
-        return view('proveedor.edit', compact('proveedor'));
+        $asignado = User::pluck('name', 'id');
+        $estado = Estadocliente::pluck('situacion', 'id');
+        $area = Area::pluck('derivado', 'id');
+        return view('proveedor.edit', compact(
+            'proveedor',
+            'asignado',
+            'estado',
+            'area'
+        ));
     }
 
     /**

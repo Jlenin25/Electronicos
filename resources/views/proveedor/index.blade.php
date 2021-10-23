@@ -30,7 +30,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table class="table table-hover">
                                 <thead class="thead bg-warning">
                                     <tr>
                                         <th>No</th>
@@ -61,13 +61,13 @@
 											<td>{{ $proveedor->celular1 }}</td>
 											<td>{{ $proveedor->email1 }}</td>
 											<td>{{ $proveedor->paginaweb }}</td>
-											<td>{{ $proveedor->id_estadocliente }}</td>
+											<td>{{ $proveedor->estadocliente->situacion }}</td>
 											<td>{{ $proveedor->razonsocial }}</td>
 											<td>{{ $proveedor->contaco }}</td>
 											<td>{{ $proveedor->celular2 }}</td>
 											<td>{{ $proveedor->email2 }}</td>
-											<td>{{ $proveedor->id_area }}</td>
-											<td>{{ $proveedor->id_user }}</td>
+											<td>{{ $proveedor->area->derivado }}</td>
+											<td>{{ $proveedor->user->name }}</td>
 
                                             <td>
                                                 <form action="{{ route('proveedors.destroy',$proveedor->id) }}" method="POST">

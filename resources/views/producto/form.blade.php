@@ -36,13 +36,13 @@
             {!! $errors->first('stock', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('id_proveedors') }}
-            {{ Form::text('id_proveedors', $producto->id_proveedors, ['class' => 'form-control' . ($errors->has('id_proveedors') ? ' is-invalid' : ''), 'placeholder' => 'Proveedor']) }}
-            {!! $errors->first('id_categoria', '<div class="invalid-feedback">:message</p>') !!}
+            {{ Form::label('id_proveedor') }}
+            {{ Form::select('id_proveedor', $proveedor, $producto->id_proveedor, ['class' => 'form-control' . ($errors->has('id_proveedor') ? ' is-invalid' : ''), 'placeholder' => 'Proveedor']) }}
+            {!! $errors->first('id_proveedor', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('id_categoria') }}
-            {{ Form::text('id_categoria', $producto->id_categoria, ['class' => 'form-control' . ($errors->has('id_categoria') ? ' is-invalid' : ''), 'placeholder' => 'Categoria']) }}
+            {{ Form::select('id_categoria', $categoria, $producto->id_categoria, ['class' => 'form-control' . ($errors->has('id_categoria') ? ' is-invalid' : ''), 'placeholder' => 'Categoria']) }}
             {!! $errors->first('id_categoria', '<div class="invalid-feedback">:message</p>') !!}
         </div>
     </div>

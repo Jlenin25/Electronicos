@@ -3,9 +3,9 @@
 Usuarios
 @endsection
 @section('content')
-<div class="container-xl">
+<div class="">
     <div class="table-responsive">
-        <div class="table-wrapper">
+        <div class="table-wrapper" style="background-color: transparent">
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-8"><h2>Usuarios</b></h2></div>
@@ -24,10 +24,9 @@ Usuarios
                     </div>
                 </div>
             </div>
-            <table class="table table-striped table-hover table-bordered">
+            <table class="table table-hover table-bordered">
                 <thead class="bg-warning">
                     <tr>
-                        <th>Id</th>
                         <th>Nombres</th>
                         <th>Apellidos</th>
                         <th>DNI</th>
@@ -35,13 +34,12 @@ Usuarios
                         <th>Estado</th>
                         <th>Correo</th>
                         <th>Cargo</th>
-                        <th>Opciones</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($users as $user)
                     <tr>
-                        <td>{{ ++$i }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->lastname }}</td>
                         <td>{{ $user->docu }}</td>

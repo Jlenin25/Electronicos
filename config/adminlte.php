@@ -86,9 +86,9 @@ return [
     'layout_topnav' => null,
     'layout_boxed' => null,
     'layout_fixed_sidebar' => true,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
-    'layout_dark_mode' => null,
+    'layout_dark_mode' => 'bg-warning',
 
     /*
     |--------------------------------------------------------------------------
@@ -271,6 +271,7 @@ return [
             'icon'        => 'fas fa-cart-arrow-down',
             'can'         => 'productos.index',
         ],
+        ['header' => 'Cotización'],
         [
             'text'    => 'Ventas',
             'icon'    => 'fas fa-fw fa-share',
@@ -309,9 +310,19 @@ return [
             'can'         => 'condicions.index',
         ],
         [
+            'text'        => 'Area',
+            'url'         => 'areas',
+            'can'         => 'areas.index',
+        ],
+        [
             'text'        => 'Estado',
             'url'         => 'estados',
             'can'         => 'estados.index',
+        ],
+        [
+            'text'        => 'Estado-Clientes',
+            'url'         => 'estadoclientes',
+            'can'         => 'estadoclientes.index',
         ],
         [
             'text'        => 'Forma de pago',
@@ -334,6 +345,7 @@ return [
             'icon'        => 'fas fa-hands-helping',
             'can'         => 'incidencias.index',
         ],
+        ['header' => 'Roles & Permisos'],
         [
             'text'        => 'ADMIN (ROLES)',
             'url'         => 'roles',

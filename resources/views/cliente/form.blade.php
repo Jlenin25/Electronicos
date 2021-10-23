@@ -53,7 +53,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('id_area') }}
-            {{ Form::text('id_area', $cliente->id_area, ['class' => 'form-control' . ($errors->has('id_area') ? ' is-invalid' : ''), 'placeholder' => 'Id Area']) }}
+            {{ Form::select('id_area', $area, $cliente->id_area, ['class' => 'form-control' . ($errors->has('id_area') ? ' is-invalid' : ''), 'placeholder' => 'Id Area']) }}
             {!! $errors->first('id_area', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">

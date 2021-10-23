@@ -30,7 +30,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table class="table table-hover">
                                 <thead class="thead bg-warning">
                                     <tr>
                                         <th>No</th>
@@ -61,13 +61,13 @@
 											<td>{{ $cliente->celular1 }}</td>
 											<td>{{ $cliente->email1 }}</td>
 											<td>{{ $cliente->paginaweb }}</td>
-											<td>{{ $cliente->id_estadocliente }}</td>
+											<td>{{ $cliente->estadocliente->situacion }}</td>
 											<td>{{ $cliente->razonsocial }}</td>
 											<td>{{ $cliente->contacto }}</td>
 											<td>{{ $cliente->celular2 }}</td>
 											<td>{{ $cliente->email2 }}</td>
-											<td>{{ $cliente->id_area }}</td>
-											<td>{{ $cliente->id_user }}</td>
+											<td>{{ $cliente->area->derivado }}</td>
+											<td>{{ $cliente->user->name }}</td>
 
                                             <td>
                                                 <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">

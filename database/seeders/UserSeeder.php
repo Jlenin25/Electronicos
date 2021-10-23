@@ -19,11 +19,10 @@ class UserSeeder extends Seeder
             'lastname'=> 'Benancio',
             'docu'=> '12345678',
             'direccion' => 'Los Olivos, Rosales de pro',
-            'estado'=> '1',
+            'estado'=> 'activo',
             'email' => 'mauro@gmail.com',
             'password' => bcrypt('12345678')
         ])->assignRole('Admin');
-
         // User::factory(10)->create();
     }
 }

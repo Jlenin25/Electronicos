@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\EstadoCliente;
 use App\Models\User;
+use App\Models\Area;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 
@@ -35,10 +36,12 @@ class ClienteController extends Controller
         $cliente = new Cliente();
         $asignado = User::pluck('name', 'id');
         $estado = Estadocliente::pluck('situacion', 'id');
+        $area = Area::pluck('derivado', 'id');
         return view('cliente.create', compact(
             'cliente',
             'asignado',
-            'estado'
+            'estado',
+            'area'
         ));
     }
 
@@ -80,8 +83,15 @@ class ClienteController extends Controller
     public function edit($id)
     {
         $cliente = Cliente::find($id);
-
-        return view('cliente.edit', compact('cliente'));
+        $asignado = User::pluck('name', 'id');
+        $estado = Estadocliente::pluck('situacion', 'id');
+        $area = Area::pluck('derivado', 'id');
+        return view('cliente.edit', compact(
+            'cliente',
+            'asignado',
+            'estado',
+            'area'
+        ));
     }
 
     /**

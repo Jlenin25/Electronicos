@@ -15,7 +15,7 @@
     @endif
     <div class="card">
         <div class="card-body">
-            <table class="table table-striped">
+            <table class="table table-hover">
                 <thead class="bg-warning">
                     <tr>
                         <th>ID</th>

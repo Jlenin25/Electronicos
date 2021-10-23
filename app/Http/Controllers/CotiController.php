@@ -40,7 +40,7 @@ class CotiController extends Controller
     public function create()
     {
         $coti = new Coti();
-        $cliente = Cliente::pluck('id_user', 'id');
+        $cliente = Cliente::pluck('contacto', 'id');
         $asignado = User::pluck('name', 'id');
         $moneda = Moneda::pluck('monedas', 'id');
         $expira = Expira::pluck('dias', 'id');
@@ -94,8 +94,20 @@ class CotiController extends Controller
     public function edit($id)
     {
         $coti = Coti::find($id);
-
-        return view('coti.edit', compact('coti'));
+        $cliente = Cliente::pluck('contacto', 'id');
+        $asignado = User::pluck('name', 'id');
+        $moneda = Moneda::pluck('monedas', 'id');
+        $expira = Expira::pluck('dias', 'id');
+        $estado = Estado::pluck('situacion', 'id');
+        $pago = Formapago::pluck('pago', 'id');
+        $entrega = Tiempoentrega::pluck('dias', 'id');
+        $condicion = Condicion::pluck('condicionesgenerales', 'id');
+        $pagina = Piepagina::pluck('piedepagina', 'id');
+        return view('coti.edit', compact(
+            'cliente', 'asignado', 'moneda',
+            'expira', 'estado', 'pago', 'entrega',
+            'condicion', 'pagina','coti'
+        ));
     }
 
     /**
