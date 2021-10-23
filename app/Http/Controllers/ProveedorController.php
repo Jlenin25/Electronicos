@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Proveedor;
+use Illuminate\Http\Request;
+
+/**
+ * Class ProveedorController
+ * @package App\Http\Controllers
+ */
 class ProveedorController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('can:proveedores.index')->only('index');
-        $this->middleware('can:proveedores.create')->only('create', 'store');
-        $this->middleware('can:proveedores.edit')->only('edit', 'update');
-        $this->middleware('can:proveedores.destroy')->only('destroy');
-    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $proveedors =Proveedor::all();
-        return view('proveedor.index')->with('proveedors',$proveedors);
+        $proveedors = Proveedor::paginate();
+
+        return view('proveedor.index', compact('proveedors'))
+            ->with('i', (request()->input('page', 1) - 1) * $proveedors->perPage());
     }
 
     /**
@@ -26,91 +31,79 @@ class ProveedorController extends Controller
      */
     public function create()
     {
-        return view('proveedor.create');
+        $proveedor = new Proveedor();
+        return view('proveedor.create', compact('proveedor'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $proveedors = new Proveedor();
-        $proveedors->codigo = $request->get('codigo');
-        $proveedors->razon_social = $request->get('razon_social');
-        $proveedors->ruc = $request->get('ruc');
-        $proveedors->dni = $request->get('dni');
-        $proveedors->nombre_prov = $request->get('nombre_prov');
-        $proveedors->apellido_prov = $request->get('apellido_prov');
-        $proveedors->imagen = $request->get('imagen');
-        $proveedors->direccion_prov = $request->get('direccion_prov');
-        $proveedors->celular = $request->get('celular');
+        request()->validate(Proveedor::$rules);
 
-        $proveedors->save();
+        $proveedor = Proveedor::create($request->all());
 
-        return redirect('/proveedor');
+        return redirect()->route('proveedors.index')
+            ->with('success', 'Proveedor created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $proveedor = Proveedor::find($id);
+
+        return view('proveedor.show', compact('proveedor'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $proveedor =Proveedor::find($id);
-        return view('proveedor.edit')->with('proveedor',$proveedor);
+        $proveedor = Proveedor::find($id);
+
+        return view('proveedor.edit', compact('proveedor'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  Proveedor $proveedor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Proveedor $proveedor)
     {
-        $proveedor =Proveedor::find($id);
-        $proveedor->codigo = $request->get('codigo');
-        $proveedor->razon_social = $request->get('razon_social');
-        $proveedor->ruc = $request->get('ruc');
-        $proveedor->dni = $request->get('dni');
-        $proveedor->nombre_prov = $request->get('nombre_prov');
-        $proveedor->apellido_prov = $request->get('apellido_prov');
-        $proveedor->imagen = $request->get('imagen');
-        $proveedor->direccion_prov = $request->get('direccion_prov');
-        $proveedor->celular = $request->get('celular');
+        request()->validate(Proveedor::$rules);
 
-        $proveedor->save();
+        $proveedor->update($request->all());
 
-        return redirect('/proveedor');
+        return redirect()->route('proveedors.index')
+            ->with('success', 'Proveedor updated successfully');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      */
     public function destroy($id)
     {
-        $proveedor =Proveedor::find($id);
-        $proveedor->delete();
-        return redirect('/proveedor');
+        $proveedor = Proveedor::find($id)->delete();
+
+        return redirect()->route('proveedors.index')
+            ->with('success', 'Proveedor deleted successfully');
     }
 }

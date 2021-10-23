@@ -243,7 +243,7 @@ return [
         ],
         [
             'text'        => 'PROVEEDORES',
-            'url'         => 'proveedor',
+            'url'         => 'proveedors',
             'icon'        => 'fas fa-users',
             'can'         => 'proveedores.index',
         ],

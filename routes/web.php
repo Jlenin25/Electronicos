@@ -13,7 +13,7 @@ Route::resource('categorias', App\Http\Controllers\CategoriaController::class);
 Route::resource('roles', App\Http\Controllers\RoleController::class);
 Route::resource('login', App\Http\Controllers\HomeController::class);
 Route::resource('almacen', App\Http\Controllers\AlmacenController::class);
-Route::resource('proveedor', App\Http\Controllers\ProveedorController::class);
+Route::resource('proveedors', App\Http\Controllers\ProveedorController::class);
 Route::resource('incidencia', App\Http\Controllers\IncidenciaController::class);
 Route::resource('operaciones', App\Http\Controllers\OperacionesController::class);
 Route::resource('logistica', App\Http\Controllers\LogisticaController::class);
