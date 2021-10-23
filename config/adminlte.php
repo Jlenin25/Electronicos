@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'PROYECTO',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>PT ELECTRONICOS',
+    'logo_img' => 'vendor/adminlte/dist/img/logo',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -65,9 +65,9 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
-    'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => false,
+    'usermenu_header' => true,
+    'usermenu_header_class' => 'bg-warning',
+    'usermenu_image' => true,
     'usermenu_desc' => false,
     'usermenu_profile_url' => false,
 
@@ -102,12 +102,12 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
+    'classes_auth_card' => 'card-outline card-warning',
     'classes_auth_header' => '',
     'classes_auth_body' => '',
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
-    'classes_auth_btn' => 'btn-flat btn-primary',
+    'classes_auth_btn' => 'btn-flat btn-warning',
 
     /*
     |--------------------------------------------------------------------------
@@ -122,14 +122,14 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => '',
+    'classes_brand' => 'bg-warning',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-warning elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-warning navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -145,13 +145,13 @@ return [
     |
     */
 
-    'sidebar_mini' => 'lg',
+    'sidebar_mini' => true,
     'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
     'sidebar_collapse_remember_no_transition' => true,
     'sidebar_scrollbar_theme' => 'os-theme-light',
-    'sidebar_scrollbar_auto_hide' => 'l',
+    'sidebar_scrollbar_auto_hide' => true,
     'sidebar_nav_accordion' => true,
     'sidebar_nav_animation_speed' => 300,
 
@@ -283,8 +283,16 @@ return [
             'can'         => 'productos.index',
         ],
         [
+            'text'        => 'INCIDENCIAS',
+            'url'         => 'incidencia',
+            'icon'        => 'fas fa-hands-helping',
+            'can'         => 'incidencias.index',
+        ],
+        [
             'text'    => 'Ventas',
             'icon'    => 'fas fa-fw fa-share',
+            'label'   => 'Nuevo',
+            'label_color'   => 'warning',
             'submenu' => [
                 [
                     'text' => 'Cotización',
@@ -298,57 +306,61 @@ return [
                 ],
             ],
         ],
-        [
-            'text'        => 'Asignado',
-            'url'         => 'asignado',
-            'can'         => 'asignado.index',
+        [  
+            'text'    => 'Cotizados',
+            'icon'    => 'fas fa-fw fa-share',
+            'label'   => 'Nuevo',
+            'label_color'   => 'warning',
+            'submenu' => [
+                        [
+                            'text'        => 'Asignado',
+                            'url'         => 'asignados',
+                            'can'         => 'asignado.index',
+                        ],
+                        [
+                            'text'        => 'Moneda',
+                            'url'         => 'monedas',
+                            'can'         => 'monedas.index',
+                        ],
+                        [
+                            'text'        => 'Expira',
+                            'url'         => 'expiras',
+                            'can'         => 'expiras.index',
+                        ],
+                        [
+                            'text'        => 'Condiciones Generales',
+                            'url'         => 'condicions',
+                            'can'         => 'condicions.index',
+                        ],
+                        [
+                            'text'        => 'Estado',
+                            'url'         => 'estados',
+                            'can'         => 'estados.index',
+                        ],
+                        [
+                            'text'        => 'Forma de pago',
+                            'url'         => 'formapagos',
+                            'can'         => 'formadepagos.index',
+                        ],
+                        [
+                            'text'        => 'Tiempo de entrega',
+                            'url'         => 'tiempoentregas',
+                            'can'         => 'tiempoentregas.index',
+                        ],
+                        [
+                            'text'        => 'Dirección',
+                            'url'         => 'direccion',
+                            'can'         => 'direccion.index',
+                        ],
+                        [
+                            'text'        => 'Pie de página',
+                            'url'         => 'piepaginas',
+                            'can'         => 'piepagina.index',
+                        ],
+                       
+            ]
         ],
-        [
-            'text'        => 'Moneda',
-            'url'         => 'monedas',
-            'can'         => 'monedas.index',
-        ],
-        [
-            'text'        => 'Expira',
-            'url'         => 'expiras',
-            'can'         => 'expiras.index',
-        ],
-        [
-            'text'        => 'Condiciones Generales',
-            'url'         => 'condicionesgenerales',
-            'can'         => 'condicionesgenerales.index',
-        ],
-        [
-            'text'        => 'Estado',
-            'url'         => 'estados',
-            'can'         => 'estados.index',
-        ],
-        [
-            'text'        => 'Forma de pago',
-            'url'         => 'formadepagos',
-            'can'         => 'formadepagos.index',
-        ],
-        [
-            'text'        => 'Tiempo de entrega',
-            'url'         => 'tiempodeentregas',
-            'can'         => 'tiempodeentregas.index',
-        ],
-        [
-            'text'        => 'Dirección',
-            'url'         => 'direccion',
-            'can'         => 'direccion.index',
-        ],
-        [
-            'text'        => 'Pie de página',
-            'url'         => 'piepaginas',
-            'can'         => 'piepagina.index',
-        ],
-        [
-            'text'        => 'INCIDENCIAS',
-            'url'         => 'incidencia',
-            'icon'        => 'fas fa-hands-helping',
-            'can'         => 'incidencias.index',
-        ],
+        ['header' => 'CONFIGURACION DE ROLES'],
         [
             'text'        => 'ADMIN (ROLES)',
             'url'         => 'roles',

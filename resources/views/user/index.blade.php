@@ -12,7 +12,7 @@ Usuarios
                     <div class="col-sm-4">
                         @can('users.create')
                         <div class="float-right">
-                            <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">Crear</a>
+                            <a href="{{ route('users.create') }}" class="btn btn-warning btn-sm float-right"  data-placement="left">Crear</a>
                         </div>
                         @endcan
                         <form>
@@ -25,7 +25,7 @@ Usuarios
                 </div>
             </div>
             <table class="table table-striped table-hover table-bordered">
-                <thead>
+                <thead class="bg-warning">
                     <tr>
                         <th>Id</th>
                         <th>Nombres</th>

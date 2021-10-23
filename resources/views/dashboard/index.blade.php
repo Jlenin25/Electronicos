@@ -1,10 +1,11 @@
 @extends('layouts.template-crud')
 @section('content')
 @can('dashboard.create')
-<a href="dashboard/create" class="btn btn-primary">CREAR</a>
+<br>
+<a href="dashboard/create" class="btn btn-warning float-right">CREAR</a>
 @endcan
 <table class="table table-dark table-striped mt-4">
-    <thead>
+    <thead class="bg-warning">
         <tr>
             <th scope="col">ID</th>
             <th scope="col">ID DASHBOARD</th>

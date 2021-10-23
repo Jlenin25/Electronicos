@@ -2,7 +2,8 @@
 @extends('layouts.template-crud')
 @section('content')
 @can('operaciones.create')
-<a href="operaciones/create" class="btn btn-primary">CREAR</a>
+<br>
+<a href="operaciones/create" class="btn btn-warning float-right">CREAR</a>
 @endcan
 <table class="table table-dark table-striped mt-4">
     <thead>

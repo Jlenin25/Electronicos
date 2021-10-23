@@ -2,7 +2,8 @@
 @section('title', 'Roles')
 @section('content_header')
     @can('roles.create')
-    <a href="{{route('roles.create')}}" class="btn btn-secondary btn-sm float-right">Nuevo Rol</a>
+    <br>
+    <a href="{{route('roles.create')}}" class="btn btn-warning btn-sm float-right">Nuevo Rol</a>
     @endcan
     <h1>Lista de  roles</h1>
 @stop
@@ -15,7 +16,7 @@
     <div class="card">
         <div class="card-body">
             <table class="table table-striped">
-                <thead>
+                <thead class="bg-warning">
                     <tr>
                         <th>ID</th>
                         <th>Role</th>
