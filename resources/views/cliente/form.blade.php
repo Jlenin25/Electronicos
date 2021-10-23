@@ -1,19 +1,15 @@
 <div class="box box-info padding-1">
     <div class="box-body">
+        
         <div class="form-group">
-            {{ Form::label('id_user') }}
-            {{ Form::select('id_user', $user, $cliente->id_user, ['class' => 'form-control' . ($errors->has('id_user') ? ' is-invalid' : ''), 'placeholder' => 'Cliente']) }}
-            {!! $errors->first('id_user', '<div class="invalid-feedback">:message</p>') !!}
+            {{ Form::label('name') }}
+            {{ Form::text('name', $cliente->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Name']) }}
+            {!! $errors->first('name', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('ruc') }}
             {{ Form::text('ruc', $cliente->ruc, ['class' => 'form-control' . ($errors->has('ruc') ? ' is-invalid' : ''), 'placeholder' => 'Ruc']) }}
             {!! $errors->first('ruc', '<div class="invalid-feedback">:message</p>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('id_user') }}
-            {{ Form::select('id_user', $direccion, $cliente->id_user, ['class' => 'form-control' . ($errors->has('id_user') ? ' is-invalid' : ''), 'placeholder' => 'Dirección']) }}
-            {!! $errors->first('id_user', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('celular1') }}
@@ -32,7 +28,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('id_estadocliente') }}
-            {{ Form::select('id_estadocliente', $estado, $cliente->id_estadocliente, ['class' => 'form-control' . ($errors->has('id_estadocliente') ? ' is-invalid' : ''), 'placeholder' => 'Id Estadocliente']) }}
+            {{ Form::text('id_estadocliente', $cliente->id_estadocliente, ['class' => 'form-control' . ($errors->has('id_estadocliente') ? ' is-invalid' : ''), 'placeholder' => 'Id Estadocliente']) }}
             {!! $errors->first('id_estadocliente', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
@@ -57,8 +53,13 @@
         </div>
         <div class="form-group">
             {{ Form::label('id_area') }}
-            {{ Form::select('id_area', $area, $cliente->id_area, ['class' => 'form-control' . ($errors->has('id_area') ? ' is-invalid' : ''), 'placeholder' => 'Id Area']) }}
+            {{ Form::text('id_area', $cliente->id_area, ['class' => 'form-control' . ($errors->has('id_area') ? ' is-invalid' : ''), 'placeholder' => 'Id Area']) }}
             {!! $errors->first('id_area', '<div class="invalid-feedback">:message</p>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('id_user') }}
+            {{ Form::text('id_user', $cliente->id_user, ['class' => 'form-control' . ($errors->has('id_user') ? ' is-invalid' : ''), 'placeholder' => 'Id User']) }}
+            {!! $errors->first('id_user', '<div class="invalid-feedback">:message</p>') !!}
         </div>
 
     </div>

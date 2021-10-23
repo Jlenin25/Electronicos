@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
  * Class Cliente
  *
  * @property $id
+ * @property $name
  * @property $ruc
- * @property $id_user
  * @property $celular1
  * @property $email1
  * @property $paginaweb
@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $celular2
  * @property $email2
  * @property $id_area
+ * @property $id_user
  * @property $created_at
  * @property $updated_at
  *
@@ -33,6 +34,7 @@ class Cliente extends Model
 {
     
     static $rules = [
+		'name' => 'required',
 		'ruc' => 'required',
 		'celular1' => 'required',
 		'email1' => 'required',
@@ -50,7 +52,7 @@ class Cliente extends Model
      *
      * @var array
      */
-    protected $fillable = ['ruc','id_user','celular1','email1','paginaweb','id_estadocliente','razonsocial','contacto','celular2','email2','id_area'];
+    protected $fillable = ['name','ruc','celular1','email1','paginaweb','id_estadocliente','razonsocial','contacto','celular2','email2','id_area','id_user'];
 
 
     /**

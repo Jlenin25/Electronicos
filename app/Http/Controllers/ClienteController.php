@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Estadocliente;
-use App\Models\User;
-use App\Models\Area;
+
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 
@@ -21,6 +19,7 @@ class ClienteController extends Controller
     public function index()
     {
         $clientes = Cliente::paginate();
+
         return view('cliente.index', compact('clientes'))
             ->with('i', (request()->input('page', 1) - 1) * $clientes->perPage());
     }
@@ -33,17 +32,7 @@ class ClienteController extends Controller
     public function create()
     {
         $cliente = new Cliente();
-        $user = User::pluck('name', 'id');
-        $estado = Estadocliente::pluck('situacion', 'id');
-        $direccion = User::pluck('direccion', 'id');
-        $area = Area::pluck('derivado', 'id');
-        return view('cliente.create', compact(
-            'user',
-            'cliente',
-            'estado',
-            'direccion',
-            'area'
-        ));
+        return view('cliente.create', compact('cliente'));
     }
 
     /**

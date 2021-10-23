@@ -51,22 +51,15 @@ class User extends Authenticatable {
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-<<<<<<< HEAD
-=======
     // public function roles() {
     //     return $this->belongsToMany(Role::class);
     // }
->>>>>>> 1b9a7037ad78872a8a63c72cbca9500883fc66d5
 
     public function adminlte_image()
     {
         return 'https://picsum.photos/300/300';
     }
 
-<<<<<<< HEAD
-    
-}
-=======
     public function adminlte_desc()
     {
         return 'Admin';
@@ -77,4 +70,3 @@ class User extends Authenticatable {
         return 'profile/username';
     }
 }
->>>>>>> 1b9a7037ad78872a8a63c72cbca9500883fc66d5

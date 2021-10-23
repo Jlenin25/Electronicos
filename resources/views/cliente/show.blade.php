@@ -20,12 +20,12 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Ruc:</strong>
-                            {{ $cliente->ruc }}
+                            <strong>Name:</strong>
+                            {{ $cliente->name }}
                         </div>
                         <div class="form-group">
-                            <strong>Id User:</strong>
-                            {{ $cliente->id_user }}
+                            <strong>Ruc:</strong>
+                            {{ $cliente->ruc }}
                         </div>
                         <div class="form-group">
                             <strong>Celular1:</strong>
@@ -62,6 +62,10 @@
                         <div class="form-group">
                             <strong>Id Area:</strong>
                             {{ $cliente->id_area }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Id User:</strong>
+                            {{ $cliente->id_user }}
                         </div>
 
                     </div>

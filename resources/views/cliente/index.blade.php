@@ -31,11 +31,12 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
-                                <thead class="thead bg-warning">
+                                <thead class="thead">
                                     <tr>
-                                        <th>Cliente</th>
+                                        <th>No</th>
+                                        
+										<th>Name</th>
 										<th>Ruc</th>
-										<th>Id User</th>
 										<th>Celular1</th>
 										<th>Email1</th>
 										<th>Paginaweb</th>
@@ -45,24 +46,28 @@
 										<th>Celular2</th>
 										<th>Email2</th>
 										<th>Id Area</th>
+										<th>Id User</th>
+
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($clientes as $cliente)
                                         <tr>
-                                            <td>{{ $cliente->user->name }}</td>
+                                            <td>{{ ++$i }}</td>
+                                            
+											<td>{{ $cliente->name }}</td>
 											<td>{{ $cliente->ruc }}</td>
-											<td>{{ $cliente->user->direccion }}</td>
 											<td>{{ $cliente->celular1 }}</td>
 											<td>{{ $cliente->email1 }}</td>
 											<td>{{ $cliente->paginaweb }}</td>
-											<td>{{ $cliente->estadocliente->situacion }}</td>
+											<td>{{ $cliente->id_estadocliente }}</td>
 											<td>{{ $cliente->razonsocial }}</td>
 											<td>{{ $cliente->contacto }}</td>
 											<td>{{ $cliente->celular2 }}</td>
 											<td>{{ $cliente->email2 }}</td>
-											<td>{{ $cliente->area->derivado }}</td>
+											<td>{{ $cliente->id_area }}</td>
+											<td>{{ $cliente->id_user }}</td>
 
                                             <td>
                                                 <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">

@@ -15,12 +15,8 @@ class CreateClientesTable extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('ruc');
-            $table->foreignId('id_user')
-                  ->nullable()
-                  ->constrained('users')
-                  ->cascadeOnUpdate()
-                  ->nullOnDelete();
             $table->string('celular1');
             $table->string('email1');
             $table->string('paginaweb');
@@ -36,6 +32,11 @@ class CreateClientesTable extends Migration
             $table->foreignId('id_area')
                   ->nullable()
                   ->constrained('areas')
+                  ->cascadeOnUpdate()
+                  ->nullOnDelete();
+            $table->foreignId('id_user')
+                  ->nullable()
+                  ->constrained('users')
                   ->cascadeOnUpdate()
                   ->nullOnDelete();
             $table->timestamps();
