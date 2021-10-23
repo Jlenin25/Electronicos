@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('layouts.template-crud')
 @section('template_title')
     {{ $coti->name ?? 'Show Coti' }}
 @endsection
@@ -25,8 +24,8 @@
                             {{ $coti->id_cliente }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Asignado:</strong>
-                            {{ $coti->id_asignado }}
+                            <strong>Id User:</strong>
+                            {{ $coti->id_user }}
                         </div>
                         <div class="form-group">
                             <strong>Id Expira:</strong>
@@ -49,16 +48,12 @@
                             {{ $coti->id_estado }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Direccion:</strong>
-                            {{ $coti->id_direccion }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Id Condiciones Generale:</strong>
-                            {{ $coti->id_condiciones_generale }}
-                        </div>
-                        <div class="form-group">
                             <strong>Id Piepagina:</strong>
                             {{ $coti->id_piepagina }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Id Condicions:</strong>
+                            {{ $coti->id_condicions }}
                         </div>
 
                     </div>

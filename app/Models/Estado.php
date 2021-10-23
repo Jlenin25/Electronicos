@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
  * Class Estado
  *
  * @property $id
- * @property $estado
+ * @property $situacion
  * @property $created_at
  * @property $updated_at
  *
+ * @property Coti[] $cotis
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -19,7 +20,7 @@ class Estado extends Model
 {
     
     static $rules = [
-		'estado' => 'required',
+		'situacion' => 'required',
     ];
 
     protected $perPage = 20;
@@ -29,8 +30,16 @@ class Estado extends Model
      *
      * @var array
      */
-    protected $fillable = ['estado'];
+    protected $fillable = ['situacion'];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function cotis()
+    {
+        return $this->hasMany('App\Models\Coti', 'id_estado', 'id');
+    }
+    
 
 }

@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('layouts.template-crud')
 @section('template_title')
     Cliente
 @endsection
@@ -34,19 +33,36 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead bg-warning">
                                     <tr>
-                                        <th>No</th>
-                                        
+                                        <th>Cliente</th>
+										<th>Ruc</th>
 										<th>Id User</th>
-
+										<th>Celular1</th>
+										<th>Email1</th>
+										<th>Paginaweb</th>
+										<th>Id Estadocliente</th>
+										<th>Razonsocial</th>
+										<th>Contacto</th>
+										<th>Celular2</th>
+										<th>Email2</th>
+										<th>Id Area</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($clientes as $cliente)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $cliente->id_user }}</td>
+                                            <td>{{ $cliente->user->name }}</td>
+											<td>{{ $cliente->ruc }}</td>
+											<td>{{ $cliente->user->direccion }}</td>
+											<td>{{ $cliente->celular1 }}</td>
+											<td>{{ $cliente->email1 }}</td>
+											<td>{{ $cliente->paginaweb }}</td>
+											<td>{{ $cliente->estadocliente->situacion }}</td>
+											<td>{{ $cliente->razonsocial }}</td>
+											<td>{{ $cliente->contacto }}</td>
+											<td>{{ $cliente->celular2 }}</td>
+											<td>{{ $cliente->email2 }}</td>
+											<td>{{ $cliente->area->derivado }}</td>
 
                                             <td>
                                                 <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">

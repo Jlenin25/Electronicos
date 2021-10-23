@@ -9,28 +9,26 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property $id
  * @property $id_cliente
- * @property $id_asignado
+ * @property $id_user
  * @property $id_expira
  * @property $id_moneda
  * @property $id_tiempoentrega
  * @property $id_formapago
  * @property $id_estado
- * @property $id_direccion
- * @property $id_condiciones_generale
  * @property $id_piepagina
+ * @property $id_condicions
  * @property $created_at
  * @property $updated_at
  *
- * @property Asignado $asignado
  * @property Cliente $cliente
- * @property CondicionesGenerale $condicionesGenerale
- * @property Direccion $direccion
+ * @property Condicion $condicion
  * @property Estado $estado
  * @property Expira $expira
  * @property Formapago $formapago
  * @property Moneda $moneda
  * @property Piepagina $piepagina
  * @property Tiempoentrega $tiempoentrega
+ * @property User $user
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -47,17 +45,9 @@ class Coti extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_cliente','id_asignado','id_expira','id_moneda','id_tiempoentrega','id_formapago','id_estado','id_direccion','id_condiciones_generale','id_piepagina'];
+    protected $fillable = ['id_cliente','id_user','id_expira','id_moneda','id_tiempoentrega','id_formapago','id_estado','id_piepagina','id_condicions'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function asignado()
-    {
-        return $this->hasOne('App\Models\Asignado', 'id', 'id_asignado');
-    }
-    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -69,17 +59,9 @@ class Coti extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function condicionesGenerale()
+    public function condicion()
     {
-        return $this->hasOne('App\Models\CondicionesGenerale', 'id', 'id_condiciones_generale');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function direccion()
-    {
-        return $this->hasOne('App\Models\Direccion', 'id', 'id_direccion');
+        return $this->hasOne('App\Models\Condicion', 'id', 'id_condicions');
     }
     
     /**
@@ -128,6 +110,14 @@ class Coti extends Model
     public function tiempoentrega()
     {
         return $this->hasOne('App\Models\Tiempoentrega', 'id', 'id_tiempoentrega');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function user()
+    {
+        return $this->hasOne('App\Models\User', 'id', 'id_user');
     }
     
 

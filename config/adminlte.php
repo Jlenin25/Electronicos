@@ -14,8 +14,13 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'title' => 'PROYECTO',
     'title_prefix' => '',
+=======
+    'title' => '',
+    'title_prefix' => 'Electrónicos |',
+>>>>>>> 1b9a7037ad78872a8a63c72cbca9500883fc66d5
     'title_postfix' => '',
 
     /*
@@ -45,8 +50,13 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'logo' => '<b>PT ELECTRONICOS',
     'logo_img' => 'vendor/adminlte/dist/img/logo',
+=======
+    'logo' => '<b>ELEC</b>trónicos',
+    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+>>>>>>> 1b9a7037ad78872a8a63c72cbca9500883fc66d5
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -66,10 +76,17 @@ return [
 
     'usermenu_enabled' => true,
     'usermenu_header' => true,
+<<<<<<< HEAD
     'usermenu_header_class' => 'bg-warning',
     'usermenu_image' => true,
     'usermenu_desc' => false,
     'usermenu_profile_url' => false,
+=======
+    'usermenu_header_class' => 'bg-primary',
+    'usermenu_image' => true,
+    'usermenu_desc' => null,
+    'usermenu_profile_url' => true,
+>>>>>>> 1b9a7037ad78872a8a63c72cbca9500883fc66d5
 
     /*
     |--------------------------------------------------------------------------
@@ -127,9 +144,15 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
+<<<<<<< HEAD
     'classes_sidebar' => 'sidebar-dark-warning elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-warning navbar-light',
+=======
+    'classes_sidebar' => 'sidebar-dark-danger elevation-4',
+    'classes_sidebar_nav' => '',
+    'classes_topnav' => 'navbar-dark navbar-danger',
+>>>>>>> 1b9a7037ad78872a8a63c72cbca9500883fc66d5
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -145,6 +168,7 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'sidebar_mini' => true,
     'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
@@ -152,6 +176,15 @@ return [
     'sidebar_collapse_remember_no_transition' => true,
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => true,
+=======
+    'sidebar_mini' => 'lg',
+    'sidebar_collapse' => true,
+    'sidebar_collapse_auto_size' => false,
+    'sidebar_collapse_remember' => false,
+    'sidebar_collapse_remember_no_transition' => true,
+    'sidebar_scrollbar_theme' => 'os-theme-dark',
+    'sidebar_scrollbar_auto_hide' => 'l',
+>>>>>>> 1b9a7037ad78872a8a63c72cbca9500883fc66d5
     'sidebar_nav_accordion' => true,
     'sidebar_nav_animation_speed' => 300,
 
@@ -172,7 +205,7 @@ return [
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
     'right_sidebar_push' => true,
-    'right_sidebar_scrollbar_theme' => 'os-theme-light',
+    'right_sidebar_scrollbar_theme' => 'os-theme-dark',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
     /*
@@ -230,11 +263,6 @@ return [
 
         // Sidebar items:
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
             'text'        => 'DASHBOARD',
             'url'         => 'dashboard',
             'icon'        => 'fas fa-fw fa-lock',
@@ -248,7 +276,7 @@ return [
         ],
         [
             'text'        => 'PROVEEDORES',
-            'url'         => 'proveedor',
+            'url'         => 'proveedors',
             'icon'        => 'fas fa-users',
             'can'         => 'proveedores.index',
         ],
@@ -306,6 +334,7 @@ return [
                 ],
             ],
         ],
+<<<<<<< HEAD
         [  
             'text'    => 'Cotizados',
             'icon'    => 'fas fa-fw fa-share',
@@ -359,6 +388,58 @@ return [
                         ],
                        
             ]
+=======
+        [
+            'text'        => 'Moneda',
+            'url'         => 'monedas',
+            'can'         => 'monedas.index',
+        ],
+        [
+            'text'        => 'Expira',
+            'url'         => 'expiras',
+            'can'         => 'expiras.index',
+        ],
+        [
+            'text'        => 'Condiciones Generales',
+            'url'         => 'condicions',
+            'can'         => 'condicions.index',
+        ],
+        [
+            'text'        => 'Estado',
+            'url'         => 'estados',
+            'can'         => 'estados.index',
+        ],
+        [
+            'text'        => 'Forma de pago',
+            'url'         => 'formapagos',
+            'can'         => 'formadepagos.index',
+        ],
+        [
+            'text'        => 'Tiempo de entrega',
+            'url'         => 'tiempoentregas',
+            'can'         => 'tiempoentregas.index',
+        ],
+        [
+            'text'        => 'Pie de página',
+            'url'         => 'piepaginas',
+            'can'         => 'piepagina.index',
+        ],
+        [
+            'text'        => 'Estado-Cliente',
+            'url'         => 'estadoclientes',
+            'can'         => 'estadocliente.index',
+        ],
+        [
+            'text'        => 'Area',
+            'url'         => 'areas',
+            'can'         => 'area.index',
+        ],
+        [
+            'text'        => 'INCIDENCIAS',
+            'url'         => 'incidencia',
+            'icon'        => 'fas fa-hands-helping',
+            'can'         => 'incidencias.index',
+>>>>>>> 1b9a7037ad78872a8a63c72cbca9500883fc66d5
         ],
         ['header' => 'CONFIGURACION DE ROLES'],
         [

@@ -15,6 +15,7 @@ class User extends Authenticatable {
         'name' => 'required',
         'lastname' => 'required',
         'docu' => 'required',
+        'direccion' => 'required',
         'estado' => 'required',
         'email' => 'required',
         'password' => 'required'
@@ -28,6 +29,7 @@ class User extends Authenticatable {
         'name',
         'lastname',
         'docu',
+        'direccion',
         'estado',
         'email',
         'password',
@@ -49,11 +51,30 @@ class User extends Authenticatable {
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+<<<<<<< HEAD
+=======
+    // public function roles() {
+    //     return $this->belongsToMany(Role::class);
+    // }
+>>>>>>> 1b9a7037ad78872a8a63c72cbca9500883fc66d5
 
     public function adminlte_image()
     {
         return 'https://picsum.photos/300/300';
     }
 
+<<<<<<< HEAD
     
 }
+=======
+    public function adminlte_desc()
+    {
+        return 'Admin';
+    }
+
+    public function adminlte_profile_url()
+    {
+        return 'profile/username';
+    }
+}
+>>>>>>> 1b9a7037ad78872a8a63c72cbca9500883fc66d5

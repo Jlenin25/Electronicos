@@ -29,8 +29,7 @@ class TiempoentregaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         $tiempoentrega = new Tiempoentrega();
         return view('tiempoentrega.create', compact('tiempoentrega'));
     }

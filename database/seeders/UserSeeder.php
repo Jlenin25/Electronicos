@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
             'name' => 'Mauro',
             'lastname'=> 'Benancio',
             'docu'=> '12345678',
+            'direccion' => 'Los Olivos, Rosales de pro',
             'estado'=> '1',
             'email' => 'mauro@gmail.com',
             'password' => bcrypt('12345678')

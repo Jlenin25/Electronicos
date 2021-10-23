@@ -15,8 +15,7 @@ class CreateFormapagosTable extends Migration
     {
         Schema::create('formapagos', function (Blueprint $table) {
             $table->id();
-            $table->string('efectivo');
-            $table->string('credito');
+            $table->string('pago');
             $table->timestamps();
         });
     }

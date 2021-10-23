@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Piepagina
  *
  * @property $id
- * @property $cod_piedepagina
- * @property $name_piedepagina
+ * @property $piedepagina
  * @property $created_at
  * @property $updated_at
  *
@@ -21,8 +20,7 @@ class Piepagina extends Model
 {
     
     static $rules = [
-		'cod_piedepagina' => 'required',
-		'name_piedepagina' => 'required',
+		'piedepagina' => 'required',
     ];
 
     protected $perPage = 20;
@@ -32,7 +30,7 @@ class Piepagina extends Model
      *
      * @var array
      */
-    protected $fillable = ['cod_piedepagina','name_piedepagina'];
+    protected $fillable = ['piedepagina'];
 
 
     /**

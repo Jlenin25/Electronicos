@@ -31,6 +31,7 @@ Usuarios
                         <th>Nombres</th>
                         <th>Apellidos</th>
                         <th>DNI</th>
+                        <th>Dirección</th>
                         <th>Estado</th>
                         <th>Correo</th>
                         <th>Cargo</th>
@@ -44,9 +45,14 @@ Usuarios
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->lastname }}</td>
                         <td>{{ $user->docu }}</td>
+                        <td>{{ $user->direccion }}</td>
                         <td>{{ $user->estado }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->roles }}</td>
+                        <td>
+                            @foreach ($user->roles as $role)
+                            {{ $role->name }}
+                            @endforeach
+                        </td>
                         <td>
                             <form action="{{ route('users.destroy',$user->id) }}" method="POST">
                                 <a class="view" title="View" data-toggle="tooltip" href="{{ route('users.show',$user->id) }}"><i class="material-icons">&#xE417;</i></a>

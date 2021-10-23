@@ -1,4 +1,5 @@
 @extends('layouts.template-crud')
+
 @section('template_title')
     {{ $estado->name ?? 'Show Estado' }}
 @endsection
@@ -20,8 +21,8 @@
                     <div class="card-body">
 
                         <div class="form-group">
-                            <strong>Estado:</strong>
-                            {{ $estado->estado }}
+                            <strong>Situacion:</strong>
+                            {{ $estado->situacion }}
                         </div>
 
                     </div>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template-crud')
 
 @section('template_title')
     {{ $piepagina->name ?? 'Show Piepagina' }}
@@ -19,14 +19,10 @@
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
-                            <strong>Cod Piedepagina:</strong>
-                            {{ $piepagina->cod_piedepagina }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Name Piedepagina:</strong>
-                            {{ $piepagina->name_piedepagina }}
+                            <strong>Piedepagina:</strong>
+                            {{ $piepagina->piedepagina }}
                         </div>
 
                     </div>

@@ -15,12 +15,17 @@
 				{{ Form::label('DNI') }}
 				{{ Form::text('docu', $user->docu, ['class' => 'form-control' . ($errors->has('docu') ? ' is-invalid' : ''), 'placeholder' => 'DNI']) }}
 				{!! $errors->first('docu', '<div class="invalid-feedback">:message</p>') !!}
-		</div>
-		<div class="form-group">
+		    </div>
+            <div class="form-group">
+                {{ Form::label('Direccion') }}
+                {{ Form::text('direccion', $user->direccion, ['class' => 'form-control' . ($errors->has('direccion') ? ' is-invalid' : ''), 'placeholder' => 'Direccion']) }}
+                {!! $errors->first('direccion', '<div class="invalid-feedback">:message</p>') !!}
+            </div>
+		    <div class="form-group">
 				{{ Form::label('Estado') }}
 				{{ Form::text('estado', $user->estado, ['class' => 'form-control' . ($errors->has('estado') ? ' is-invalid' : ''), 'placeholder' => 'Estado']) }}
 				{!! $errors->first('estado', '<div class="invalid-feedback">:message</p>') !!}
-		</div>
+		    </div>
 			<div class="form-group">
 					{{ Form::label('Correo electrónico') }}
 					{{ Form::text('email', $user->email, ['class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' => 'Correo electrónico']) }}

@@ -1,9 +1,7 @@
-@extends('layouts.app')
-
+@extends('layouts.template-crud')
 @section('template_title')
     Coti
 @endsection
-
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -35,18 +33,15 @@
                                 <thead class="thead bg-warning">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Id Cliente</th>
-										<th>Id Asignado</th>
-										<th>Id Expira</th>
-										<th>Id Moneda</th>
-										<th>Id Tiempoentrega</th>
-										<th>Id Formapago</th>
-										<th>Id Estado</th>
-										<th>Id Direccion</th>
-										<th>Id Condiciones Generale</th>
-										<th>Id Piepagina</th>
-
+										<th>Cliente</th>
+										<th>Asignado</th>
+										<th>Expira</th>
+										<th>Moneda</th>
+										<th>Tiempoentrega</th>
+										<th>Formapago</th>
+										<th>Estado</th>
+										<th>Piepagina</th>
+										<th>Condicions</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -54,17 +49,15 @@
                                     @foreach ($cotis as $coti)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $coti->id_cliente }}</td>
-											<td>{{ $coti->id_asignado }}</td>
-											<td>{{ $coti->id_expira }}</td>
-											<td>{{ $coti->id_moneda }}</td>
-											<td>{{ $coti->id_tiempoentrega }}</td>
-											<td>{{ $coti->id_formapago }}</td>
-											<td>{{ $coti->id_estado }}</td>
-											<td>{{ $coti->id_direccion }}</td>
-											<td>{{ $coti->id_condiciones_generale }}</td>
-											<td>{{ $coti->id_piepagina }}</td>
+											<td>{{ $coti->cliente->user->name }}</td>
+											<td>{{ $coti->user->name }}</td>
+											<td>{{ $coti->expira->dias }}</td>
+											<td>{{ $coti->moneda->monedas }}</td>
+											<td>{{ $coti->tiempoentrega->dias }}</td>
+											<td>{{ $coti->formapago->pago }}</td>
+											<td>{{ $coti->estado->situacion }}</td>
+											<td>{{ $coti->piepagina->piedepagina }}</td>
+											<td>{{ $coti->condicion->condicionesgenerales }}</td>
 
                                             <td>
                                                 <form action="{{ route('cotis.destroy',$coti->id) }}" method="POST">

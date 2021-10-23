@@ -2,14 +2,9 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('efectivo') }}
-            {{ Form::text('efectivo', $formapago->efectivo, ['class' => 'form-control' . ($errors->has('efectivo') ? ' is-invalid' : ''), 'placeholder' => 'Efectivo']) }}
-            {!! $errors->first('efectivo', '<div class="invalid-feedback">:message</p>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('credito') }}
-            {{ Form::text('credito', $formapago->credito, ['class' => 'form-control' . ($errors->has('credito') ? ' is-invalid' : ''), 'placeholder' => 'Credito']) }}
-            {!! $errors->first('credito', '<div class="invalid-feedback">:message</p>') !!}
+            {{ Form::label('pago') }}
+            {{ Form::text('pago', $formapago->pago, ['class' => 'form-control' . ($errors->has('pago') ? ' is-invalid' : ''), 'placeholder' => 'Pago']) }}
+            {!! $errors->first('pago', '<div class="invalid-feedback">:message</p>') !!}
         </div>
 
     </div>

@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
  * Class Formapago
  *
  * @property $id
- * @property $efectivo
- * @property $credito
+ * @property $pago
  * @property $created_at
  * @property $updated_at
  *
+ * @property Coti[] $cotis
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -20,8 +20,7 @@ class Formapago extends Model
 {
     
     static $rules = [
-		'efectivo' => 'required',
-		'credito' => 'required',
+		'pago' => 'required',
     ];
 
     protected $perPage = 20;
@@ -31,8 +30,16 @@ class Formapago extends Model
      *
      * @var array
      */
-    protected $fillable = ['efectivo','credito'];
+    protected $fillable = ['pago'];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function cotis()
+    {
+        return $this->hasMany('App\Models\Coti', 'id_formapago', 'id');
+    }
+    
 
 }

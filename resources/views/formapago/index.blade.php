@@ -35,10 +35,7 @@
                                 <thead class="thead bg-warning">
                                     <tr>
                                         <th>No</th>
-
-										<th>Efectivo</th>
-										<th>Credito</th>
-
+										<th>Pago</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -46,9 +43,7 @@
                                     @foreach ($formapagos as $formapago)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-
-											<td>{{ $formapago->efectivo }}</td>
-											<td>{{ $formapago->credito }}</td>
+											<td>{{ $formapago->pago }}</td>
 
                                             <td>
                                                 <form action="{{ route('formapagos.destroy',$formapago->id) }}" method="POST">

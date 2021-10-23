@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Expira extends Model
 {
-    
+
     static $rules = [
 		'dias' => 'required',
     ];
@@ -31,6 +31,9 @@ class Expira extends Model
      */
     protected $fillable = ['dias'];
 
-
+    public function cotis()
+    {
+        return $this->hasMany('App\Models\Coti', 'id_expira', 'id');
+    }
 
 }

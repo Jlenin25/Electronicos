@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Moneda extends Model
 {
-    
+
     static $rules = [
 		'monedas' => 'required',
     ];
@@ -30,6 +30,11 @@ class Moneda extends Model
      * @var array
      */
     protected $fillable = ['monedas'];
+
+    public function cotis()
+    {
+        return $this->hasMany('App\Models\Coti', 'id_moneda', 'id');
+    }
 
 
 

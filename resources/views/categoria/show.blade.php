@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template-crud')
 
 @section('template_title')
     {{ $categoria->name ?? 'Show Categoria' }}
@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
                             <strong>Nombre:</strong>
                             {{ $categoria->nombre }}

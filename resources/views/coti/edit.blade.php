@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('layouts.template-crud')
 @section('template_title')
     Update Coti
 @endsection
