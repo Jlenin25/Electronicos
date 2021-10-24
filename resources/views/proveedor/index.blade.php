@@ -1,7 +1,5 @@
 @extends('layouts.template-crud')
-@section('template_title')
-    Proveedor
-@endsection
+@section('title', 'Proveedores')
 <br>
 @section('content')
     <div class="container-fluid">
@@ -12,12 +10,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Proveedor') }}
+                                {{ __('Proveedores') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('proveedors.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Añadir') }}
                                 </a>
                               </div>
                         </div>

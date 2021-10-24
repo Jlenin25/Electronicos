@@ -1,8 +1,6 @@
 @extends('layouts.template-crud')
-@section('template_title')
-    {{ $coti->name ?? 'Show Coti' }}
-@endsection
-
+@section('title', 'Cotizaciones')
+<br>
 @section('content')
     <section class="content container-fluid">
         <div class="row">
@@ -10,50 +8,50 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Coti</span>
+                            <span class="card-title">Vista de Cotización</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('cotis.index') }}"> Back</a>
+                            <a class="btn bg-warning btn-sm float-right" href="{{ route('cotis.index') }}">Atrás</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Id Cliente:</strong>
-                            {{ $coti->id_cliente }}
+                            <strong>Cliente:</strong>
+                            {{ $coti->cliente->contacto }}
                         </div>
                         <div class="form-group">
-                            <strong>Id User:</strong>
-                            {{ $coti->id_user }}
+                            <strong>Asignado:</strong>
+                            {{ $coti->user->name }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Expira:</strong>
-                            {{ $coti->id_expira }}
+                            <strong>Expira:</strong>
+                            {{ $coti->expira->dias }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Moneda:</strong>
-                            {{ $coti->id_moneda }}
+                            <strong>Moneda:</strong>
+                            {{ $coti->moneda->monedas }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Tiempoentrega:</strong>
-                            {{ $coti->id_tiempoentrega }}
+                            <strong>Tiempo de entrega:</strong>
+                            {{ $coti->tiempoentrega->dias}}
                         </div>
                         <div class="form-group">
-                            <strong>Id Formapago:</strong>
-                            {{ $coti->id_formapago }}
+                            <strong>Forma de pago:</strong>
+                            {{ $coti->formapago->pago }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Estado:</strong>
-                            {{ $coti->id_estado }}
+                            <strong>Estado de cotización:</strong>
+                            {{ $coti->estado->situacion }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Piepagina:</strong>
-                            {{ $coti->id_piepagina }}
+                            <strong>Pie de página:</strong>
+                            {{ $coti->piepagina->piedepagina }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Condicions:</strong>
-                            {{ $coti->id_condicions }}
+                            <strong>Condición:</strong>
+                            {{ $coti->condicion->condicionesgenerales }}
                         </div>
 
                     </div>

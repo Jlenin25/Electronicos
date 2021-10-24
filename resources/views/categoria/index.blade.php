@@ -1,7 +1,5 @@
 @extends('layouts.template-crud')
-@section('template_title')
-    Categorías
-@endsection
+@section('title', 'Categorías')
 <br>
 @section('content')
     <div class="container-fluid">

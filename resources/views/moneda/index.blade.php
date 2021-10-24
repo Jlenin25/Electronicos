@@ -1,7 +1,5 @@
 @extends('layouts.template-crud')
-@section('template_title')
-    Moneda
-@endsection
+@section('title', 'Moneda')
 <br>
 @section('content')
     <div class="container-fluid">

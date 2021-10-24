@@ -1,8 +1,6 @@
 @extends('layouts.template-crud')
-@section('template_title')
-    {{ $proveedor->name ?? 'Show Proveedor' }}
-@endsection
-
+@section('title', 'Proveedores')
+<br>
 @section('content')
     <section class="content container-fluid">
         <div class="row">
@@ -10,62 +8,62 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Proveedor</span>
+                            <span class="card-title">Vista del Proveedor: {{ $proveedor->contaco }}</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('proveedors.index') }}"> Back</a>
+                            <a class="btn bg-warning btn-sm float-right" href="{{ route('proveedors.index') }}">Atrás</a>
                         </div>
                     </div>
 
                     <div class="card-body">
 
                         <div class="form-group">
-                            <strong>Ruc:</strong>
+                            <strong>RUC:</strong>
                             {{ $proveedor->ruc }}
                         </div>
                         <div class="form-group">
-                            <strong>Direccion:</strong>
+                            <strong>Dirección:</strong>
                             {{ $proveedor->direccion }}
                         </div>
                         <div class="form-group">
-                            <strong>Celular1:</strong>
+                            <strong>Celular 1:</strong>
                             {{ $proveedor->celular1 }}
                         </div>
                         <div class="form-group">
-                            <strong>Email1:</strong>
+                            <strong>Email 1:</strong>
                             {{ $proveedor->email1 }}
                         </div>
                         <div class="form-group">
-                            <strong>Paginaweb:</strong>
+                            <strong>Página Web:</strong>
                             {{ $proveedor->paginaweb }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Estadocliente:</strong>
-                            {{ $proveedor->id_estadocliente }}
+                            <strong>Estado Proveedor:</strong>
+                            {{ $proveedor->estadocliente->situacion }}
                         </div>
                         <div class="form-group">
-                            <strong>Razonsocial:</strong>
+                            <strong>Razón social:</strong>
                             {{ $proveedor->razonsocial }}
                         </div>
                         <div class="form-group">
-                            <strong>Contaco:</strong>
+                            <strong>Contáco:</strong>
                             {{ $proveedor->contaco }}
                         </div>
                         <div class="form-group">
-                            <strong>Celular2:</strong>
+                            <strong>Celular 2:</strong>
                             {{ $proveedor->celular2 }}
                         </div>
                         <div class="form-group">
-                            <strong>Email2:</strong>
+                            <strong>Email 2:</strong>
                             {{ $proveedor->email2 }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Area:</strong>
-                            {{ $proveedor->id_area }}
+                            <strong>Área:</strong>
+                            {{ $proveedor->area->derivado }}
                         </div>
                         <div class="form-group">
-                            <strong>Id User:</strong>
-                            {{ $proveedor->id_user }}
+                            <strong>Asignado:</strong>
+                            {{ $proveedor->user->name }}
                         </div>
 
                     </div>

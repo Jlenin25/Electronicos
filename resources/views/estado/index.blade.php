@@ -1,8 +1,5 @@
 @extends('layouts.template-crud')
-
-@section('template_title')
-    Estado
-@endsection
+@section('title', 'Estado - Cotización')
 <br>
 @section('content')
     <div class="container-fluid">
@@ -13,7 +10,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Estado') }}
+                                {{ __('Estado - Cotización') }}
                             </span>
 
                              <div class="float-right">

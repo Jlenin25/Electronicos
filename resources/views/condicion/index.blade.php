@@ -1,7 +1,5 @@
 @extends('layouts.template-crud')
-@section('template_title')
-    Condicion
-@endsection
+@section('title', 'Condición')
 <br>
 @section('content')
     <div class="container-fluid">
@@ -12,7 +10,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Condicion') }}
+                                {{ __('Condiciones Generales') }}
                             </span>
 
                              <div class="float-right">
@@ -33,7 +31,7 @@
                             <table class="table table-hover">
                                 <thead class="thead bg-warning">
                                     <tr>
-										<th>Condicionesgenerales</th>
+										<th>Condición</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>

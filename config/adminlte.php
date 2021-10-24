@@ -15,7 +15,7 @@ return [
     */
 
     'title' => '',
-    'title_prefix' => 'Electrónicos |',
+    'title_prefix' => 'Electros |',
     'title_postfix' => '',
 
     /*
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>ELEC</b>trónicos',
+    'logo' => '<b>ELEC</b>tros',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -88,7 +88,7 @@ return [
     'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
-    'layout_dark_mode' => 'bg-warning',
+    'layout_dark_mode' => 'true',
 
     /*
     |--------------------------------------------------------------------------
@@ -230,12 +230,6 @@ return [
 
         // Sidebar items:
         [
-            'text'        => 'DASHBOARD',
-            'url'         => 'dashboards',
-            'icon'        => 'fas fa-fw fa-lock',
-            'can'         => 'dashboard.index',
-        ],
-        [
             'text'        => 'USUARIOS',
             'url'         => 'users',
             'icon'        => 'fas fa-fw fa-user',
@@ -275,21 +269,25 @@ return [
         [
             'text'    => 'Ventas',
             'icon'    => 'fas fa-fw fa-share',
+            'label' => 'Nuevo',
+            'label_color' => 'danger',
             'submenu' => [
                 [
-                    'text' => 'Cotización',
+                    'text' => 'Cotizaciones',
                     'url'  => 'cotis',
+                    'icon' => 'fas fa-file-alt',
                     'can' => 'cotis.index',
                 ],
                 [
                     'text' => 'Clientes',
                     'url'  => 'clientes',
+                    'icon'        => 'fas fa-users',
                     'can' => 'clientes.index',
                 ],
                 [
-                    'text'        => 'PROVEEDORES',
+                    'text'        => 'Proveedores',
                     'url'         => 'proveedors',
-                    'icon'        => 'fas fa-users',
+                    'icon'        => 'fas fa-user-tie',
                     'can'         => 'proveedores.index',
                 ],
             ],
@@ -297,46 +295,55 @@ return [
         [
             'text'        => 'Moneda',
             'url'         => 'monedas',
+            'icon'        => 'fas fa-euro-sign',
             'can'         => 'monedas.index',
         ],
         [
             'text'        => 'Expira',
             'url'         => 'expiras',
+            'icon'        => 'fas fa-th-list',
             'can'         => 'expiras.index',
         ],
         [
             'text'        => 'Condiciones Generales',
             'url'         => 'condicions',
+            'icon'        => 'fas fa-fan',
             'can'         => 'condicions.index',
         ],
         [
             'text'        => 'Area',
             'url'         => 'areas',
+            'icon'        => 'fas fa-chart-area',
             'can'         => 'areas.index',
         ],
         [
-            'text'        => 'Estado',
+            'text'        => 'Estado - Cotización',
             'url'         => 'estados',
+            'icon'        => 'fas fa-window-restore',
             'can'         => 'estados.index',
         ],
         [
-            'text'        => 'Estado-Clientes',
+            'text'        => 'Estado - Clientes',
             'url'         => 'estadoclientes',
+            'icon'        => 'fab fa-slideshare',
             'can'         => 'estadoclientes.index',
         ],
         [
             'text'        => 'Forma de pago',
             'url'         => 'formapagos',
+            'icon'        => 'fas fa-file-invoice-dollar',
             'can'         => 'formadepagos.index',
         ],
         [
             'text'        => 'Tiempo de entrega',
             'url'         => 'tiempoentregas',
+            'icon'        => 'fas fa-truck',
             'can'         => 'tiempoentregas.index',
         ],
         [
             'text'        => 'Pie de página',
             'url'         => 'piepaginas',
+            'icon'        => 'fas fa-shoe-prints',
             'can'         => 'piepagina.index',
         ],
         [

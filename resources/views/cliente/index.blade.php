@@ -1,8 +1,6 @@
 @extends('layouts.template-crud')
-@section('template_title')
-    Cliente
-@endsection
-
+@section('title', 'Clientes')
+<br>
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -10,14 +8,12 @@
                 <div class="card">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-
                             <span id="card_title">
                                 {{ __('Cliente') }}
                             </span>
-
                              <div class="float-right">
                                 <a href="{{ route('clientes.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
-                                  {{ __('Añadir') }}
+                                  {{ __('Nuevo') }}
                                 </a>
                               </div>
                         </div>

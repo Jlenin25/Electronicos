@@ -1,7 +1,5 @@
 @extends('layouts.template-crud')
-@section('template_title')
-    Operacione
-@endsection
+@section('title', 'Operaciones')
 <br>
 @section('content')
     <div class="container-fluid">

@@ -1,7 +1,5 @@
 @extends('layouts.template-crud')
-@section('template_title')
-Usuarios
-@endsection
+@section('title', 'Usuarios')
 <br>
 @section('content')
 <div class="">

@@ -1,8 +1,5 @@
 @extends('layouts.template-crud')
-
-@section('template_title')
-    Formapago
-@endsection
+@section('title', 'Forma de pago')
 <br>
 @section('content')
     <div class="container-fluid">
@@ -13,7 +10,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Formapago') }}
+                                {{ __('Forma de pago') }}
                             </span>
 
                              <div class="float-right">

@@ -1,7 +1,5 @@
 @extends('layouts.template-crud')
-@section('template_title')
-    Coti
-@endsection
+@section('title', 'Cotizaciones')
 <br>
 @section('content')
     <div class="container-fluid">
@@ -12,12 +10,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Coti') }}
+                                {{ __('Cotizaciones') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('cotis.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
-                                  {{ __('Añadir') }}
+                                  {{ __('Nuevo') }}
                                 </a>
                               </div>
                         </div>
@@ -30,7 +28,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover">
+                            <table class="table table-hover" >
                                 <thead class="thead bg-warning">
                                     <tr>
 										<th>Cliente</th>
@@ -41,14 +39,14 @@
 										<th>Formapago</th>
 										<th>Estado</th>
 										<th>Piepagina</th>
-										<th>Condicions</th>
+										<th>Condiciones</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($cotis as $coti)
                                         <tr>
-											<td>{{ $coti->cliente->user->name }}</td>
+											<td>{{ $coti->cliente->contacto }}</td>
 											<td>{{ $coti->user->name }}</td>
 											<td>{{ $coti->expira->dias }}</td>
 											<td>{{ $coti->moneda->monedas }}</td>
@@ -60,7 +58,7 @@
                                             <td>
                                                 <form action="{{ route('cotis.destroy',$coti->id) }}" method="POST">
                                                     <a class="view" href="{{ route('cotis.show',$coti->id) }}"><i class="material-icons">&#xE417;</i></a>
-                                                    <a class="edit href="{{ route('cotis.edit',$coti->id) }}"><i class="material-icons">&#xE254;</i></a>
+                                                    <a class="edit" href="{{ route('cotis.edit',$coti->id) }}"><i class="material-icons">&#xE254;</i></a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="material-icons">&#xE872;</i></button>

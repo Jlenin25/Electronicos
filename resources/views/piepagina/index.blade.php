@@ -1,7 +1,5 @@
 @extends('layouts.template-crud')
-@section('template_title')
-    Piepagina
-@endsection
+@section('title', 'Pie de página')
 <br>
 @section('content')
     <div class="container-fluid">
@@ -12,7 +10,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Piepagina') }}
+                                {{ __('Pie de página') }}
                             </span>
 
                              <div class="float-right">
@@ -33,7 +31,7 @@
                             <table class="table table-hover">
                                 <thead class="thead bg-warning">
                                     <tr>
-										<th>Piedepagina</th>
+										<th>Pie de pagina</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
