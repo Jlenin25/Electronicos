@@ -1,5 +1,7 @@
 @extends('layouts.template-crud')
-@section('title', 'Productos')
+@section('template_title')
+    Producto
+@endsection
 <br>
 @section('content')
     <div class="">
@@ -10,7 +12,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Productos') }}
+                                {{ __('Producto') }}
                             </span>
 
                              <div class="float-right">
@@ -35,14 +37,13 @@
                                 <thead class="thead bg-warning">
                                     <tr>
 										<th>Nombre</th>
-                                        <th>Imagen</th>
-										<th>Precio</th>
-										<th>Detalle</th>
-										<th>Cantidad</th>
+                                        <th>Precio Costo</th>
+										<th>Disponibles</th>
 										<th>Descripcion</th>
-										<th>Stock</th>
-                                        <th>Proveedor</th>
+										<th>Fabricante</th>
 										<th>Categoría</th>
+                                        <th>Precio Venta</th>
+                                        <th>Proveedor</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -50,14 +51,13 @@
                                     @foreach ($productos as $producto)
                                         <tr>
 											<td>{{ $producto->nombre }}</td>
-                                            <td>{{ $producto->imagen }}</td>
-											<td>{{ $producto->precio }}</td>
-											<td>{{ $producto->detalle }}</td>
-											<td>{{ $producto->cantidad }}</td>
+                                            <td>{{ $producto->preciocosto }}</td>
+											<td>{{ $producto->disponibles }}</td>
 											<td>{{ $producto->descripcion }}</td>
-											<td>{{ $producto->stock }}</td>
-                                            <td>{{ $producto->proveedor->contaco }}</td>
+											<td>{{ $producto->fabricante }}</td>
 											<td>{{ $producto->categoria->nombre }}</td>
+                                            <td>{{ $producto->precioventa }}</td>
+                                            <td>{{ $producto->proveedor->contaco }}</td>
                                             <td>
                                                 <form action="{{ route('productos.destroy',$producto->id) }}" method="POST">
                                                     <a style="background-color:transparent; border:none; margin:0; padding:0" class="view" href="{{ route('productos.show',$producto->id) }}"><i class="material-icons">&#xE417;</i></a>

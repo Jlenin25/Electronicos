@@ -24,12 +24,12 @@ class Producto extends Model
 {
     static $rules = [
 		'nombre' => 'required',
-    'imagen' => 'required',
-		'precio' => 'required',
+		'preciocosto' => 'required',
 		'detalle' => 'required',
-		'cantidad' => 'required',
 		'descripcion' => 'required',
-		'stock' => 'required',
+		'disponibles' => 'required',
+        'fabricante' => 'required',
+        'precioventa' => 'required',
     ];
 
     protected $perPage = 20;
@@ -40,15 +40,16 @@ class Producto extends Model
      * @var array
      */
     protected $fillable = [
-      'nombre',
-      'imagen',
-      'precio',
-      'detalle',
-      'cantidad',
-      'descripcion',
-      'stock',
+
+      'nombre' ,
+	  'preciocosto',
+	  'detalle',
+	  'descripcion',
+	  'disponibles',
       'id_categoria',
-      'id_proveedor'
+      'id_proveedor',
+      'fabricante',
+      'precioventa',
     ];
 
 
