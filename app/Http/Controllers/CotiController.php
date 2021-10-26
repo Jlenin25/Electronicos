@@ -12,7 +12,7 @@ use App\Models\Condicion;
 use App\Models\Piepagina;
 use App\Models\Coti;
 use Illuminate\Http\Request;
-
+use PDF;
 /**
  * Class CotiController
  * @package App\Http\Controllers
@@ -30,6 +30,14 @@ class CotiController extends Controller
 
         return view('coti.index', compact('cotis'))
             ->with('i', (request()->input('page', 1) - 1) * $cotis->perPage());
+    }
+
+    public function pdf()
+    {
+        $cotis = Coti::paginate();
+
+        $pdf = PDF::loadView('coti.pdf',['cotis'=>$cotis]);
+        return $pdf->stream();
     }
 
     /**

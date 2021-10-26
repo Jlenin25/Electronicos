@@ -13,6 +13,11 @@
                                 {{ __('Cotizaciones') }}
                             </span>
 
+                            <div class="float-right">
+                                <a href="{{ route('cotis.pdf') }}" class="btn bg-warning btn-sm"  data-placement="left">
+                                    {{ __('PDF') }}
+                                </a>
+&nbsp;
                              <div class="float-right">
                                 <a href="{{ route('cotis.create') }}" class="btn bg-warning btn-sm float-right"  data-placement="left">
                                   {{ __('Nuevo') }}

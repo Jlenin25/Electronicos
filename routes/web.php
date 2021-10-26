@@ -29,5 +29,7 @@ Route::resource('formapagos', App\Http\Controllers\FormapagoController::class);
 Route::resource('cotis', App\Http\Controllers\CotiController::class);
 Route::resource('areas', App\Http\Controllers\AreaController::class);
 Route::resource('estadoclientes', App\Http\Controllers\EstadoclienteController::class);
+//PDF
+Route::get('coti/pdf', [App\Http\Controllers\CotiController::class, 'pdf'] )->name('cotis.pdf');
 
 Auth::routes();
