@@ -81,3 +81,7 @@
         </div>
     </div>
 @endsection
+@section('scripts')
+{!! Html::script('melody/js/alerts.js') !!}
+{!! Html::script('melody/js/avground.js') !!}
+@endsection

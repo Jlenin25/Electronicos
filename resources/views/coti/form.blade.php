@@ -57,6 +57,45 @@
         </div>
     </div>
     <br>
+    <br>
+
+    <tbody>
+        <?php $costoTotal = 0;
+        $costoigv = 0;
+        $costoventa = 0;
+        ?>
+        @foreach($clientes as $clientes)
+        @if (  $clientes->id_coti  == $clientess-> cod_cot)
+        
+        
+        <?php $costoTotal += $clientes->precioneto; ?>
+        <tr>
+            <td>COSTO TOTAL</td>
+            <td>
+                {{$costoTotal}}</td>
+        </tr>
+        <?php $costoigv += $costoTotal*0.18; ?>
+        <tr>
+            <td>IGV</td>
+            <td>{{$costoigv}}</td>
+        </tr>
+        <?php $costoventa += $costoTotal+$costoigv; ?>
+        <tr>
+            <td>PRECIO DE VENTA TOTAL</td>
+            <td>{{$costoventa}}</td>
+        </tr>
+
+
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <br>
     <div class="box-footer mt20">
         <button type="submit" class="btn bg-warning">Añadir</button>
     </div>
